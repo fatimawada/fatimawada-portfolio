@@ -1071,7 +1071,7 @@ export default function Home() {
               </p>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-8">
-                I am actively open to opportunities and technical collaborations connected to programs such as <span className="text-[#0B1220] font-semibold">MIT Solve</span>, <span className="text-[#0B1220] font-semibold">UNICEF youth innovation initiatives</span>, and fellowship programs building technology for high-impact challenges.
+                I am actively open to engineering roles, technical collaborations, and fellowship programs focused on building scalable technology for high-impact challenges.
               </p>
 
               {/* Direct Email Display & Copy Action */}
