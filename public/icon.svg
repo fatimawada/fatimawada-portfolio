@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#536DFE" />
+      <stop offset="55%" stop-color="#292448" />
+      <stop offset="100%" stop-color="#171729" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="url(#grad)" stroke="#536DFE" stroke-width="1.2" />
+  <text x="16" y="21" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" font-weight="800" fill="#F2EBDD" text-anchor="middle" letter-spacing="-0.5">FBW</text>
+</svg>
