@@ -13,41 +13,53 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fatima Binta Wada | Technology Innovator, Full-Stack Developer & Product Lead",
+  title: "Fatima Binta Wada | Technology Entrepreneur, Founder & Innovation Leader",
   description:
-    "Portfolio of Fatima Binta Wada — Nigerian technology innovator, full-stack developer, and technical lead working across digital health, emergency innovation, SaaS, youth AI literacy, and climate resilience.",
+    "Fatima Binta Wada is a Nigerian technology entrepreneur, founder, and product leader building technology and infrastructure for a more inclusive and sustainable future across financial infrastructure, climate finance, digital health, and AI.",
   keywords: [
     "Fatima Binta Wada",
     "Fatima Wada",
-    "Technology Innovator",
-    "Full-Stack Developer",
-    "Product & Technical Lead",
-    "Digital Health",
-    "Emergency Innovation",
-    "Bite2Care",
-    "ChaseFree",
+    "Technology Entrepreneur",
+    "Founder",
+    "Product and Technology Leader",
+    "Relyvora",
+    "Relyvora Foundation",
+    "Social Commerce Trust Infrastructure",
+    "Anchor Technologies Limited",
     "PulseClime",
-    "Wellcome Snakebite Innovation Prize",
+    "Climate Finance Infrastructure",
+    "Bite2Care",
     "SnakeHack Africa",
-    "Microbiology",
-    "Nigeria",
-    "African Technology Innovation"
+    "Wellcome Trust Snakebite",
+    "ChaseFree",
+    "Microbiology Bayero University Kano",
+    "African Technology Ventures",
+    "Nigeria Technology Entrepreneur",
   ],
   authors: [{ name: "Fatima Binta Wada" }],
   openGraph: {
-    title: "Fatima Binta Wada | Technology Innovator, Full-Stack Developer & Product Lead",
+    title: "Fatima Binta Wada | Technology Entrepreneur, Founder & Innovation Leader",
     description:
-      "Building practical technology for problems that matter — across digital health, SaaS automation, AI literacy, and climate resilience.",
+      "Building technology and infrastructure for a more inclusive and sustainable future.",
     url: "https://fatimawada.com",
-    siteName: "Fatima Binta Wada Portfolio",
+    siteName: "Fatima Binta Wada",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/fatima-binta-wada.jpg",
+        width: 1200,
+        height: 1500,
+        alt: "Fatima Binta Wada - Technology Entrepreneur & Founder",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fatima Binta Wada | Technology Innovator & Technical Lead",
+    title: "Fatima Binta Wada | Technology Entrepreneur & Founder",
     description:
-      "Building practical technology for problems that matter — digital health, SaaS, youth AI literacy, and climate resilience.",
+      "Building technology and infrastructure for a more inclusive and sustainable future.",
+    images: ["/images/fatima-binta-wada.jpg"],
   },
   icons: {
     icon: [
@@ -69,7 +81,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#171729] text-[#F2EBDD]">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#0B0D13] text-[#F6F4EE] selection:bg-[#10B981]/25 selection:text-[#F6F4EE]">
+        {children}
+      </body>
     </html>
   );
 }
