@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 sm:py-28 bg-[#121620]/70 border-y border-[#1E2536] relative">
+    <section id="about" className="py-20 sm:py-28 bg-[#08080A]/60 border-y border-white/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Narrative Column */}
@@ -12,11 +12,11 @@ export default function AboutSection() {
               Executive Narrative &amp; Perspective
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F6F4EE] tracking-tight mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F4F4F5] tracking-tight mb-6 leading-tight">
               I build companies, define products, and explore infrastructure that addresses systemic problems.
             </h2>
 
-            <div className="space-y-5 text-base sm:text-lg text-[#F6F4EE]/85 leading-relaxed font-normal">
+            <div className="space-y-5 text-base sm:text-lg text-[#F4F4F5]/85 leading-relaxed font-normal">
               <p>
                 My professional journey is defined by a shift away from isolated software development toward comprehensive venture building and infrastructure exploration. Building software is valuable, but real-world transformation happens when technical execution is matched with structural problem definition, business model sustainability, and deep domain context.
               </p>
@@ -31,34 +31,34 @@ export default function AboutSection() {
 
           {/* Strategic Foundations Column */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="p-6 rounded-2xl bg-[#0B0D13] border border-[#273144] hover:border-[#10B981]/40 transition-colors">
+            <div className="p-6 rounded-2xl glass-card glass-card-hover border border-white/10 hover:border-[#10B981]/40 transition-colors">
               <div className="text-xs font-mono text-[#34D399] font-semibold mb-1">01 · Entrepreneurial Leadership</div>
-              <h3 className="font-bold text-base text-[#F6F4EE] mb-2">Company Formation &amp; Direction</h3>
-              <p className="text-xs sm:text-sm text-[#9BA3B4] leading-relaxed">
+              <h3 className="font-bold text-base text-[#F4F4F5] mb-2">Company Formation &amp; Direction</h3>
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                 Founding ventures like Relyvora, designing commercial structures, negotiating infrastructure partnerships, and aligning business models with market expansion realities.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#0B0D13] border border-[#273144] hover:border-[#0D9488]/40 transition-colors">
+            <div className="p-6 rounded-2xl glass-card glass-card-hover border border-white/10 hover:border-[#0D9488]/40 transition-colors">
               <div className="text-xs font-mono text-[#2DD4BF] font-semibold mb-1">02 · Infrastructure Architecture</div>
-              <h3 className="font-bold text-base text-[#F6F4EE] mb-2">Systemic Trust &amp; Financial Rails</h3>
-              <p className="text-xs sm:text-sm text-[#9BA3B4] leading-relaxed">
+              <h3 className="font-bold text-base text-[#F4F4F5] mb-2">Systemic Trust &amp; Financial Rails</h3>
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                 Designing escrow workflows, release verification codes, settlement APIs, and exploring climate-finance access mechanisms for underserved populations.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#0B0D13] border border-[#273144] hover:border-[#E11D48]/40 transition-colors">
+            <div className="p-6 rounded-2xl glass-card glass-card-hover border border-white/10 hover:border-[#E11D48]/40 transition-colors">
               <div className="text-xs font-mono text-[#FB7185] font-semibold mb-1">03 · Multidisciplinary Execution</div>
-              <h3 className="font-bold text-base text-[#F6F4EE] mb-2">Cross-Functional Collaboration</h3>
-              <p className="text-xs sm:text-sm text-[#9BA3B4] leading-relaxed">
+              <h3 className="font-bold text-base text-[#F4F4F5] mb-2">Cross-Functional Collaboration</h3>
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                 Leading product strategy across multidisciplinary teams in healthcare innovation (Bite2Care), presenting to international judges at SnakeHack Africa in Nairobi.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#0B0D13] border border-[#273144] hover:border-[#E07A5F]/40 transition-colors">
+            <div className="p-6 rounded-2xl glass-card glass-card-hover border border-white/10 hover:border-[#E07A5F]/40 transition-colors">
               <div className="text-xs font-mono text-[#F4A261] font-semibold mb-1">04 · Scientific &amp; Empirical Rigor</div>
-              <h3 className="font-bold text-base text-[#F6F4EE] mb-2">Evidence-Based Thinking</h3>
-              <p className="text-xs sm:text-sm text-[#9BA3B4] leading-relaxed">
+              <h3 className="font-bold text-base text-[#F4F4F5] mb-2">Evidence-Based Thinking</h3>
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                 Applying biological laboratory investigation and public-health analysis to diagnose systemic failure points and engineer robust, fault-tolerant technology.
               </p>
             </div>

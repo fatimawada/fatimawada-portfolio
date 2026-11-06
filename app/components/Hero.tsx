@@ -10,13 +10,13 @@ export default function Hero() {
         {/* Left Column: Positioning & Narrative */}
         <div className="lg:col-span-7 flex flex-col items-start">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#19202E] border border-[#273144] text-xs font-mono font-medium text-[#34D399] mb-6 shadow-sm">
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-card border border-white/10 text-xs font-mono font-medium text-[#34D399] mb-6 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
             <span className="tracking-wider">TECHNOLOGY ENTREPRENEUR · FOUNDER · PRODUCT LEADER</span>
           </div>
 
           {/* Name & Primary Role */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#F6F4EE] mb-3 leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#F4F4F5] mb-3 leading-[1.1]">
             Fatima Binta Wada
           </h1>
 
@@ -25,12 +25,12 @@ export default function Hero() {
           </div>
 
           {/* Hero Statement */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F6F4EE] tracking-tight mb-6 leading-snug">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F4F4F5] tracking-tight mb-6 leading-snug">
             &ldquo;Building technology and infrastructure for a more inclusive and sustainable future.&rdquo;
           </h2>
 
           {/* Supporting Introduction */}
-          <div className="space-y-4 text-base sm:text-lg text-[#F6F4EE]/85 leading-relaxed mb-6 max-w-2xl font-normal">
+          <div className="space-y-4 text-base sm:text-lg text-[#F4F4F5]/85 leading-relaxed mb-6 max-w-2xl font-normal">
             <p>
               I am a Nigerian technology entrepreneur and product builder working at the intersection of financial infrastructure, climate innovation, digital health and emerging technology.
             </p>
@@ -43,13 +43,13 @@ export default function Hero() {
           </div>
 
           {/* Location & Global Scope */}
-          <div className="flex items-center gap-2.5 text-xs sm:text-sm text-[#9BA3B4] font-mono mb-8 bg-[#121620] px-4 py-2 rounded-xl border border-[#1E2536]">
+          <div className="flex items-center gap-2.5 text-xs sm:text-sm text-zinc-400 font-mono mb-8 glass-card px-4 py-2 rounded-xl border border-white/10">
             <svg className="w-4 h-4 text-[#10B981] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span className="font-medium text-[#F6F4EE]">Nigeria</span>
-            <span className="text-[#687185]">·</span>
+            <span className="font-medium text-[#F4F4F5]">Nigeria</span>
+            <span className="text-zinc-600">·</span>
             <span>Building for global impact</span>
           </div>
 
@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
             <a
               href="#ventures"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#10B981] text-[#0B0D13] font-bold text-sm sm:text-base hover:bg-[#34D399] active:scale-[0.99] transition-all shadow-lg shadow-[#10B981]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#10B981] text-[#08080A] font-bold text-sm sm:text-base hover:bg-[#34D399] active:scale-[0.99] transition-all shadow-lg shadow-[#10B981]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
             >
               <span>Explore My Ventures</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -67,22 +67,22 @@ export default function Hero() {
 
             <a
               href="#projects"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#19202E] text-[#F6F4EE] border border-[#273144] font-medium text-sm sm:text-base hover:bg-[#20283A] hover:border-[#10B981]/40 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-card text-[#F4F4F5] border border-white/15 font-medium text-sm sm:text-base hover:border-white/30 hover:bg-white/[0.06] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
             >
               <span>View My Work</span>
             </a>
 
             <a
               href="#contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-[#9BA3B4] hover:text-[#F6F4EE] hover:bg-[#121620] border border-transparent hover:border-[#1E2536] transition-all text-sm font-medium"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-zinc-400 hover:text-[#F4F4F5] glass-card border border-white/5 hover:border-white/20 transition-all text-sm font-medium"
             >
               <span>Let&apos;s Connect</span>
             </a>
           </div>
 
           {/* Verified Channels Strip */}
-          <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t border-[#1E2536] w-full text-xs font-mono text-[#9BA3B4]">
-            <span className="text-[#687185]">Connect:</span>
+          <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t border-white/10 w-full text-xs font-mono text-zinc-400">
+            <span className="text-zinc-500">Connect:</span>
             <a
               href="https://www.linkedin.com/in/fatima-wada-0b43ab399"
               target="_blank"
@@ -94,7 +94,7 @@ export default function Hero() {
               </svg>
               <span>LinkedIn</span>
             </a>
-            <span className="text-[#273144]">·</span>
+            <span className="text-zinc-600">·</span>
             <a
               href="https://github.com/fatimawada"
               target="_blank"
@@ -106,7 +106,7 @@ export default function Hero() {
               </svg>
               <span>GitHub</span>
             </a>
-            <span className="text-[#273144]">·</span>
+            <span className="text-zinc-600">·</span>
             <a
               href={`mailto:${emailAddress}`}
               className="hover:text-[#34D399] transition-colors flex items-center gap-1.5"
@@ -123,33 +123,34 @@ export default function Hero() {
         <div className="lg:col-span-5 flex justify-center lg:justify-end">
           <div className="relative w-full max-w-sm sm:max-w-md">
             {/* Ambient Aura Frame */}
-            <div className="absolute -inset-3 bg-gradient-to-tr from-[#10B981]/20 via-[#1E2536] to-[#E07A5F]/15 rounded-3xl blur-xl opacity-60" />
-            <div className="absolute -inset-1 bg-[#121620] rounded-3xl border border-[#273144]" />
+            <div className="absolute -inset-4 bg-gradient-to-tr from-[#10B981]/20 via-white/5 to-[#D4AF37]/15 rounded-3xl blur-2xl opacity-60" />
 
-            {/* Main Portrait Card */}
-            <div className="relative rounded-2xl overflow-hidden bg-[#121620] border-2 border-[#273144] shadow-2xl shadow-black/80 aspect-[4/5]">
-              <Image
-                src="/images/fatima-binta-wada.jpg"
-                alt="Portrait of Fatima Binta Wada, Technology Entrepreneur, Founder and Product Leader"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
-                className="object-cover object-center hover:scale-[1.015] transition-transform duration-700"
-              />
+            {/* Main Portrait Card with Smoked Glass Container */}
+            <div className="relative p-2.5 sm:p-3 rounded-3xl glass-card border border-white/15 shadow-2xl shadow-black">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#08080A] border border-white/10">
+                <Image
+                  src="/images/fatima-binta-wada.jpg"
+                  alt="Portrait of Fatima Binta Wada, Technology Entrepreneur, Founder and Product Leader"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+                  className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
+                />
 
-              {/* Editorial Gradient Overlay for Lower Readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D13]/95 via-transparent to-transparent opacity-90" />
+                {/* Editorial Gradient Overlay for Lower Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08080A]/95 via-transparent to-transparent opacity-90" />
 
-              {/* Executive Founder Badge */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#0B0D13]/90 backdrop-blur-md border border-[#273144]">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-semibold text-[#F6F4EE]">Fatima Binta Wada</div>
-                    <div className="text-xs text-[#34D399] font-mono">Founder &amp; CEO · Relyvora</div>
+                {/* Executive Founder Badge */}
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl glass-card border border-white/15 backdrop-blur-xl shadow-lg">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm font-semibold text-[#F4F4F5]">Fatima Binta Wada</div>
+                      <div className="text-xs text-[#34D399] font-mono">Founder &amp; CEO · Relyvora</div>
+                    </div>
+                    <span className="px-2.5 py-1 rounded-full bg-[#10B981]/15 text-[10px] font-mono font-semibold text-[#34D399] border border-[#10B981]/30">
+                      Active Venture
+                    </span>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-[#10B981]/15 text-[10px] font-mono font-semibold text-[#34D399] border border-[#10B981]/30">
-                    Active Venture
-                  </span>
                 </div>
               </div>
             </div>
@@ -158,43 +159,43 @@ export default function Hero() {
       </div>
 
       {/* Cross-Sector Focus Strip */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 pt-10 border-t border-[#1E2536]">
-        <div className="p-5 rounded-2xl bg-[#121620]/90 border border-[#1E2536] hover:border-[#10B981]/40 transition-colors group">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 pt-10 border-t border-white/10">
+        <div className="p-5 rounded-2xl glass-card glass-card-hover border border-white/10 hover:border-[#10B981]/40 transition-colors group">
           <div className="flex items-center gap-2 mb-2">
             <span className="h-2 w-2 rounded-full bg-[#10B981]" />
-            <h3 className="text-xs font-mono font-semibold text-[#F6F4EE] uppercase tracking-wider">Financial Infrastructure</h3>
+            <h3 className="text-xs font-mono font-semibold text-[#F4F4F5] uppercase tracking-wider">Financial Infrastructure</h3>
           </div>
-          <p className="text-xs text-[#9BA3B4] leading-relaxed">
+          <p className="text-xs text-zinc-400 leading-relaxed">
             Building trust and payment workflows that make informal African social commerce accountable.
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-[#121620]/90 border border-[#1E2536] hover:border-[#0D9488]/40 transition-colors group">
+        <div className="p-5 rounded-2xl glass-card glass-card-hover border border-white/10 hover:border-[#0D9488]/40 transition-colors group">
           <div className="flex items-center gap-2 mb-2">
             <span className="h-2 w-2 rounded-full bg-[#0D9488]" />
-            <h3 className="text-xs font-mono font-semibold text-[#F6F4EE] uppercase tracking-wider">Climate Finance</h3>
+            <h3 className="text-xs font-mono font-semibold text-[#F4F4F5] uppercase tracking-wider">Climate Finance</h3>
           </div>
-          <p className="text-xs text-[#9BA3B4] leading-relaxed">
+          <p className="text-xs text-zinc-400 leading-relaxed">
             Connecting localized climate intelligence with resilience financing for vulnerable communities.
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-[#121620]/90 border border-[#1E2536] hover:border-[#E11D48]/40 transition-colors group">
+        <div className="p-5 rounded-2xl glass-card glass-card-hover border border-white/10 hover:border-[#E11D48]/40 transition-colors group">
           <div className="flex items-center gap-2 mb-2">
             <span className="h-2 w-2 rounded-full bg-[#E11D48]" />
-            <h3 className="text-xs font-mono font-semibold text-[#F6F4EE] uppercase tracking-wider">Digital Health</h3>
+            <h3 className="text-xs font-mono font-semibold text-[#F4F4F5] uppercase tracking-wider">Digital Health</h3>
           </div>
-          <p className="text-xs text-[#9BA3B4] leading-relaxed">
+          <p className="text-xs text-zinc-400 leading-relaxed">
             Technology-enabled emergency referral chains and antivenom verification for snakebite care.
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-[#121620]/90 border border-[#1E2536] hover:border-[#E07A5F]/40 transition-colors group">
+        <div className="p-5 rounded-2xl glass-card glass-card-hover border border-white/10 hover:border-[#E07A5F]/40 transition-colors group">
           <div className="flex items-center gap-2 mb-2">
             <span className="h-2 w-2 rounded-full bg-[#E07A5F]" />
-            <h3 className="text-xs font-mono font-semibold text-[#F6F4EE] uppercase tracking-wider">Scientific Rigor</h3>
+            <h3 className="text-xs font-mono font-semibold text-[#F4F4F5] uppercase tracking-wider">Scientific Rigor</h3>
           </div>
-          <p className="text-xs text-[#9BA3B4] leading-relaxed">
+          <p className="text-xs text-zinc-400 leading-relaxed">
             Microbiological laboratory investigation informing empirical systems thinking and software architecture.
           </p>
         </div>

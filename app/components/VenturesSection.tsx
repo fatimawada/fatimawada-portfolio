@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import RelyvoraFeature from "./ventures/RelyvoraFeature";
@@ -18,22 +18,22 @@ export default function VenturesSection() {
             <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]" />
             Entrepreneurial Ventures &amp; Infrastructure
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F6F4EE] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F4F4F5] tracking-tight">
             Ventures &amp; Infrastructure
           </h2>
-          <p className="text-sm sm:text-base text-[#9BA3B4] mt-2.5 max-w-2xl">
+          <p className="text-sm sm:text-base text-zinc-400 mt-2.5 max-w-2xl">
             Companies, infrastructure models, and founder-led systems built to transform informal commerce, unlock climate finance, and automate business operations.
           </p>
         </div>
 
         {/* Tab Filters */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-[#121620] border border-[#273144] text-xs font-mono self-start md:self-auto shadow-sm">
+        <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl glass-card border border-white/10 text-xs font-mono self-start md:self-auto shadow-sm">
           <button
             onClick={() => setActiveVentureTab("all")}
             className={`px-3.5 py-1.5 rounded-xl transition-all ${
               activeVentureTab === "all"
-                ? "bg-[#10B981] text-[#0B0D13] font-bold shadow-sm"
-                : "text-[#9BA3B4] hover:text-[#F6F4EE] hover:bg-[#19202E]"
+                ? "bg-[#10B981] text-[#08080A] font-bold shadow-sm"
+                : "text-zinc-400 hover:text-[#F4F4F5] hover:bg-white/5"
             }`}
           >
             All Ventures (4)
@@ -42,8 +42,8 @@ export default function VenturesSection() {
             onClick={() => setActiveVentureTab("relyvora")}
             className={`px-3.5 py-1.5 rounded-xl transition-all ${
               activeVentureTab === "relyvora"
-                ? "bg-[#10B981] text-[#0B0D13] font-bold shadow-sm"
-                : "text-[#9BA3B4] hover:text-[#F6F4EE] hover:bg-[#19202E]"
+                ? "bg-[#10B981] text-[#08080A] font-bold shadow-sm"
+                : "text-zinc-400 hover:text-[#F4F4F5] hover:bg-white/5"
             }`}
           >
             Relyvora (Primary)
@@ -52,8 +52,8 @@ export default function VenturesSection() {
             onClick={() => setActiveVentureTab("foundation")}
             className={`px-3.5 py-1.5 rounded-xl transition-all ${
               activeVentureTab === "foundation"
-                ? "bg-[#E07A5F] text-[#0B0D13] font-bold shadow-sm"
-                : "text-[#9BA3B4] hover:text-[#F6F4EE] hover:bg-[#19202E]"
+                ? "bg-[#E07A5F] text-[#08080A] font-bold shadow-sm"
+                : "text-zinc-400 hover:text-[#F4F4F5] hover:bg-white/5"
             }`}
           >
             Foundation
@@ -62,8 +62,8 @@ export default function VenturesSection() {
             onClick={() => setActiveVentureTab("pulseclime")}
             className={`px-3.5 py-1.5 rounded-xl transition-all ${
               activeVentureTab === "pulseclime"
-                ? "bg-[#0D9488] text-[#0B0D13] font-bold shadow-sm"
-                : "text-[#9BA3B4] hover:text-[#F6F4EE] hover:bg-[#19202E]"
+                ? "bg-[#0D9488] text-[#08080A] font-bold shadow-sm"
+                : "text-zinc-400 hover:text-[#F4F4F5] hover:bg-white/5"
             }`}
           >
             PulseClime
@@ -72,8 +72,8 @@ export default function VenturesSection() {
             onClick={() => setActiveVentureTab("chasefree")}
             className={`px-3.5 py-1.5 rounded-xl transition-all ${
               activeVentureTab === "chasefree"
-                ? "bg-[#3B82F6] text-[#0B0D13] font-bold shadow-sm"
-                : "text-[#9BA3B4] hover:text-[#F6F4EE] hover:bg-[#19202E]"
+                ? "bg-[#3B82F6] text-[#08080A] font-bold shadow-sm"
+                : "text-zinc-400 hover:text-[#F4F4F5] hover:bg-white/5"
             }`}
           >
             ChaseFree

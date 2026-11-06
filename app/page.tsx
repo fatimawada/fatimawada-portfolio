@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
@@ -13,21 +14,24 @@ import StackSection from "./components/StackSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
+// Dynamically load ambient 3D Canvas without blocking SSR
+const AmbientCanvas = dynamic(() => import("./components/3d/AmbientCanvas"), {
+  ssr: false,
+});
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0B0D13] text-[#F6F4EE] font-sans selection:bg-[#10B981]/25 selection:text-[#F6F4EE]">
-      {/* Refined Ambient Background Atmosphere */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-[#10B981]/8 via-[#121620]/20 to-transparent blur-3xl opacity-70" />
-        <div className="absolute top-[35%] right-[-10%] w-[600px] h-[600px] bg-[#0D9488]/6 blur-[160px] rounded-full" />
-        <div className="absolute top-[70%] left-[-10%] w-[600px] h-[600px] bg-[#3B82F6]/5 blur-[160px] rounded-full" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-      </div>
+    <div className="relative min-h-screen bg-[#08080A] text-[#F4F4F5] font-sans selection:bg-[#10B981]/25 selection:text-white overflow-x-hidden">
+      {/* Interactive 3D Ambient Anti-Gravity Canvas */}
+      <AmbientCanvas />
 
-      {/* Navigation */}
+      {/* Subtle Ambient Grid Scanline Texture */}
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+
+      {/* Navigation Bar */}
       <Navbar />
 
-      {/* Main Content Sections */}
+      {/* Main Portfolio Sections */}
       <main className="relative z-10">
         <Hero />
         <AboutSection />

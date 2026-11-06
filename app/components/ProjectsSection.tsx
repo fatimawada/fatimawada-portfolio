@@ -1,24 +1,24 @@
-﻿import React from "react";
+import React from "react";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-[#1E2536]">
+    <section id="projects" className="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10">
       {/* Header */}
       <div className="max-w-3xl mb-12">
         <div className="inline-flex items-center gap-2 text-xs font-mono text-[#FB7185] uppercase tracking-wider mb-2.5 font-semibold">
           <span className="h-1.5 w-1.5 rounded-full bg-[#E11D48]" />
           Multidisciplinary &amp; Collaborative Projects
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F6F4EE] tracking-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F4F4F5] tracking-tight">
           Selected Innovation Projects
         </h2>
-        <p className="text-sm sm:text-base text-[#9BA3B4] mt-2.5">
+        <p className="text-sm sm:text-base text-zinc-400 mt-2.5">
           High-impact collaborative healthtech initiatives and systems engineered to eliminate life-critical bottlenecks in underserved environments.
         </p>
       </div>
 
       {/* FEATURED CASE STUDY: BITE2CARE */}
-      <div className="relative rounded-3xl bg-gradient-to-b from-[#181216] to-[#120D10] border-2 border-[#E11D48]/40 p-6 sm:p-10 lg:p-12 shadow-2xl shadow-black/70 hover:border-[#E11D48] transition-all duration-300">
+      <div className="relative rounded-3xl glass-card border-2 border-[#E11D48]/40 p-6 sm:p-10 lg:p-12 shadow-2xl shadow-black/70 hover:border-[#E11D48] transition-all duration-300">
         {/* Top Badges */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
           <div className="flex items-center gap-2">
@@ -36,15 +36,15 @@ export default function ProjectsSection() {
 
         {/* Title & Metadata */}
         <div className="mb-6">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F6F4EE] tracking-tight mb-2">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F4F4F5] tracking-tight mb-2">
             Bite2Care
           </h3>
           <p className="text-base sm:text-lg text-[#FB7185] font-mono">
             Technology-Enabled Emergency Coordination for Snakebite Treatment in Rural Africa
           </p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#9BA3B4] font-mono mt-3">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400 font-mono mt-3">
             <span className="text-[#FB7185] font-semibold">Role: Product &amp; Technology Lead (Multidisciplinary Team)</span>
-            <span className="text-[#273144]">|</span>
+            <span className="text-zinc-600">|</span>
             <span>Wellcome Snakebite Innovation Initiative / SnakeHack Africa</span>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function ProjectsSection() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" />
             </svg>
           </div>
-          <div className="text-xs sm:text-sm text-[#F6F4EE]/90 leading-relaxed">
+          <div className="text-xs sm:text-sm text-[#F4F4F5]/90 leading-relaxed">
             <strong className="text-[#FB7185] block font-semibold mb-0.5">International Presentation · Nairobi, Kenya</strong>
             Presented Bite2Care on behalf of our multidisciplinary team at <span className="font-semibold text-white">SnakeHack Africa in Nairobi, Kenya</span>, an international innovation initiative supported by the Wellcome Trust snakebite programme, demonstrating our system architecture to clinicians, international judges, and public health innovators.
           </div>
@@ -64,20 +64,20 @@ export default function ProjectsSection() {
 
         {/* The Problem & The Solution */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div className="p-6 rounded-2xl bg-[#0B0D13] border border-[#273144]">
+          <div className="p-6 rounded-2xl glass-card border border-white/10">
             <div className="text-xs font-mono text-[#FB7185] uppercase tracking-wider mb-2 font-semibold">
               The Systemic Problem
             </div>
-            <p className="text-xs sm:text-sm text-[#9BA3B4] leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
               Snakebite envenoming is a neglected tropical disease causing severe mortality and amputation across rural Africa. Delays in treatment are catastrophic: victims consult unverified traditional remedies, lack emergency transport, and frequently travel hours to distant clinics only to find zero antivenom in stock.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#0B0D13] border border-[#273144]">
+          <div className="p-6 rounded-2xl glass-card border border-white/10">
             <div className="text-xs font-mono text-[#FB7185] uppercase tracking-wider mb-2 font-semibold">
               The Technology Coordination Solution
             </div>
-            <p className="text-xs sm:text-sm text-[#9BA3B4] leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
               Bite2Care engineers an interconnected emergency triage and referral coordination system. Conceived for Africa-wide impact with Nigeria as our primary implementation focus, it coordinates community first responders, receiving clinics, and transport logistics to drastically compress the critical window from bite to verified antivenom infusion.
             </p>
           </div>
@@ -89,44 +89,44 @@ export default function ProjectsSection() {
             System Capabilities &amp; Architecture
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="p-4 rounded-xl bg-[#0B0D13]/70 border border-[#273144]">
-              <div className="text-xs font-bold text-[#F6F4EE] mb-1">Emergency Referral Coordination</div>
-              <p className="text-xs text-[#9BA3B4] leading-relaxed">
+            <div className="p-4 rounded-xl glass-card glass-card-hover border border-white/10">
+              <div className="text-xs font-bold text-[#F4F4F5] mb-1">Emergency Referral Coordination</div>
+              <p className="text-xs text-zinc-400 leading-relaxed">
                 Connects community first responders to nearest verified care points, orchestrating pre-arrival notifications so clinical teams prepare.
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#0B0D13]/70 border border-[#273144]">
-              <div className="text-xs font-bold text-[#F6F4EE] mb-1">Structured First-Aid Guidance</div>
-              <p className="text-xs text-[#9BA3B4] leading-relaxed">
+            <div className="p-4 rounded-xl glass-card glass-card-hover border border-white/10">
+              <div className="text-xs font-bold text-[#F4F4F5] mb-1">Structured First-Aid Guidance</div>
+              <p className="text-xs text-zinc-400 leading-relaxed">
                 Deterministic first-aid decision trees dispensing clinically validated dos and don&apos;ts to halt harmful traditional interventions.
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#0B0D13]/70 border border-[#273144]">
-              <div className="text-xs font-bold text-[#F6F4EE] mb-1">Facility Readiness &amp; Antivenom Verification</div>
-              <p className="text-xs text-[#9BA3B4] leading-relaxed">
+            <div className="p-4 rounded-xl glass-card glass-card-hover border border-white/10">
+              <div className="text-xs font-bold text-[#F4F4F5] mb-1">Facility Readiness &amp; Antivenom Verification</div>
+              <p className="text-xs text-zinc-400 leading-relaxed">
                 Real-time verification protocols ensuring patients are only dispatched to healthcare facilities with verified antivenom stocks on hand.
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#0B0D13]/70 border border-[#273144]">
-              <div className="text-xs font-bold text-[#F6F4EE] mb-1">Patient Transport Coordination</div>
-              <p className="text-xs text-[#9BA3B4] leading-relaxed">
+            <div className="p-4 rounded-xl glass-card glass-card-hover border border-white/10">
+              <div className="text-xs font-bold text-[#F4F4F5] mb-1">Patient Transport Coordination</div>
+              <p className="text-xs text-zinc-400 leading-relaxed">
                 Rural driver and ambulance dispatch coordination designed to evacuate victims from inaccessible agrarian terrain swiftly.
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#0B0D13]/70 border border-[#273144]">
-              <div className="text-xs font-bold text-[#F6F4EE] mb-1">Low-Bandwidth Technology</div>
-              <p className="text-xs text-[#9BA3B4] leading-relaxed">
+            <div className="p-4 rounded-xl glass-card glass-card-hover border border-white/10">
+              <div className="text-xs font-bold text-[#F4F4F5] mb-1">Low-Bandwidth Technology</div>
+              <p className="text-xs text-zinc-400 leading-relaxed">
                 Zero heavy dependencies; lightweight code bundles engineered to load reliably across spotty 2G and edge network coverage.
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#0B0D13]/70 border border-[#273144]">
+            <div className="p-4 rounded-xl glass-card glass-card-hover border border-white/10">
               <div className="text-xs font-bold text-[#FB7185] mb-1">WhatsApp Frontline Interaction</div>
-              <p className="text-xs text-[#9BA3B4] leading-relaxed">
+              <p className="text-xs text-zinc-400 leading-relaxed">
                 Chatbot interfaces enabling community health workers and traditional healers to trigger emergency workflows directly in WhatsApp.
               </p>
             </div>
@@ -134,14 +134,14 @@ export default function ProjectsSection() {
         </div>
 
         {/* Community Engagement & Traditional Healers Integration */}
-        <div className="p-5 rounded-2xl bg-[#0B0D13] border border-[#273144] mb-8 text-xs text-[#9BA3B4] leading-relaxed">
-          <strong className="text-[#F6F4EE] block mb-1">Community Integration &amp; Traditional Healer Referral Pathways:</strong>
+        <div className="p-5 rounded-2xl glass-card border border-white/10 mb-8 text-xs text-zinc-400 leading-relaxed">
+          <strong className="text-[#F4F4F5] block mb-1">Community Integration &amp; Traditional Healer Referral Pathways:</strong>
           Recognizing that traditional healers are often the first point of contact after a snakebite, the Bite2Care protocol integrates them into the emergency notification chain—equipping them to initiate clinical referral instead of administering delayed traditional remedies.
         </div>
 
         {/* Team Project Attribution & Prototype Link */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-[#1E2536]">
-          <div className="text-xs text-[#9BA3B4] italic max-w-xl">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-white/10">
+          <div className="text-xs text-zinc-400 italic max-w-xl">
             Multidisciplinary team project developed for innovation challenge. Status: Working prototype concept (not deployed as an active clinical device).
           </div>
 
