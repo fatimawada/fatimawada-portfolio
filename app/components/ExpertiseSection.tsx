@@ -1,95 +1,159 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const expertiseAreas = [
+const expertiseList = [
   {
-    number: "01",
-    title: "Transactional Trust & Escrow Systems",
-    description:
-      "Engineering robust multi-party escrow architectures, automated dispute-resolution protocols, and fraud mitigation mechanisms for peer-to-peer commerce.",
-    tags: ["State Machines", "Dispute Resolution", "Escrow APIs", "Fintech Security"],
+    num: "01",
+    title: "Transactional Trust & Escrow",
+    desc: "Architecting multi-party escrow systems, dispute mediation logic, and automated fraud guards for informal social commerce.",
+    rotation: "-rotate-2",
   },
   {
-    number: "02",
-    title: "Full-Stack Web & Mobile Architecture",
-    description:
-      "Developing resilient frontend applications in Next.js and React backed by scalable Node.js microservices, PostgreSQL/Supabase, and modern cloud infrastructure.",
-    tags: ["Next.js", "React", "Node.js", "Supabase", "REST/GraphQL"],
+    num: "02",
+    title: "Full-Stack Web & API Engines",
+    desc: "Building performant Next.js, React, and Node.js microservices with PostgreSQL, Supabase, and resilient payment gateways.",
+    rotation: "rotate-2",
   },
   {
-    number: "03",
-    title: "Climate & Environmental Infrastructure",
-    description:
-      "Designing MRV (Measurement, Reporting & Verification) and milestone disbursement workflows that bridge verifiable field data with green finance.",
-    tags: ["MRV Protocols", "Auditable Pipelines", "Disbursement Logic", "CleanTech"],
+    num: "03",
+    title: "Climate-Finance & MRV Systems",
+    desc: "Designing verifiable measurement, reporting, and automated milestone-disbursement pipelines for clean technology.",
+    rotation: "-rotate-1",
   },
   {
-    number: "04",
-    title: "Healthcare Emergency Dispatch & AI",
-    description:
-      "Architecting low-bandwidth, offline-resilient triage systems, geospatial routing, and emergency health pipelines connecting remote clinics to life-saving care.",
-    tags: ["Offline-First", "Geospatial Routing", "Triage Logic", "Digital Health"],
+    num: "04",
+    title: "Digital Health & Emergency Triage",
+    desc: "Low-bandwidth, offline-resilient healthcare routing algorithms connecting remote patients to anti-venom referral hubs.",
+    rotation: "rotate-3",
   },
 ];
 
 export default function ExpertiseSection() {
+  const [activeCard, setActiveCard] = useState<number>(0);
+
   return (
-    <section id="expertise" className="py-24 sm:py-32 bg-white text-[#111827] relative">
+    <section id="expertise" className="py-24 sm:py-36 bg-white text-[#111111] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with Massive Bold Headline */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mb-16 sm:mb-20"
-        >
-          <span className="text-xs sm:text-sm font-bold tracking-widest text-[#E63946] uppercase">
-            Areas of Focus
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#111827] leading-[1.12]">
-            Building Modern Digital Solutions with Code &amp; First-Principles Architecture.
-          </h2>
-        </motion.div>
+        {/* Section Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+          
+          {/* Left Column: Pill, Bold Heading with Hand-Drawn Arrow, Description */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 flex flex-col items-start"
+          >
+            {/* Small pill-shaped section label */}
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-gray-100 text-[#E10600] text-xs font-bold uppercase tracking-wider border border-gray-200">
+              My Expertise
+            </span>
 
-        {/* Expertise Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {expertiseAreas.map((item, index) => (
-            <motion.div
-              key={item.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-8 sm:p-10 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#E63946]/30 hover:shadow-xl transition-all group flex flex-col justify-between"
+            {/* Large bold heading */}
+            <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl text-[#111111] mt-5 leading-[1.12]">
+              Building Modern Digital Solutions with Code &amp; AI
+            </h2>
+
+            {/* Hand-Drawn Curved Red Underline Vector */}
+            <svg
+              className="w-48 sm:w-64 h-3 text-[#E10600] mt-2 mb-4"
+              viewBox="0 0 260 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div>
-                <span className="text-3xl sm:text-4xl font-extrabold text-[#E63946]/40 group-hover:text-[#E63946] transition-colors font-mono">
-                  {item.number}
-                </span>
-                <h3 className="mt-4 text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-base text-gray-600 leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
+              <path
+                d="M3 9C60 2.5 150 2 257 8"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+            </svg>
 
-              <div className="mt-8 flex flex-wrap gap-2 pt-4 border-t border-gray-200/60">
-                {item.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs font-semibold rounded-full bg-white text-gray-700 border border-gray-200 shadow-2xs"
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-md">
+              Combining full-stack software development, transactional security, and cloud technologies to create scalable and impactful digital systems.
+            </p>
+
+            {/* Hand-Drawn Dashed Arrow pointing to the cards */}
+            <div className="mt-8 hidden lg:flex items-center gap-3 text-[#E10600]">
+              <span className="text-xs font-bold uppercase tracking-wider">Explore Capabilities</span>
+              <svg width="100" height="40" viewBox="0 0 100 40" fill="none" className="text-[#E10600]">
+                <path
+                  d="M10 20 C 40 10, 70 30, 90 20"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeDasharray="4 4"
+                  fill="none"
+                />
+                <path
+                  d="M85 14 L 95 20 L 85 26"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Cards scattered on a diagonal path joined by a dotted line */}
+          <div className="lg:col-span-7 relative">
+            
+            {/* Dotted Connection Path (Background) */}
+            <div className="absolute inset-y-12 left-1/2 -translate-x-1/2 w-0.5 border-l-2 border-dashed border-[#E10600]/30 hidden sm:block pointer-events-none" />
+
+            {/* Grid of Red Rounded Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+              {expertiseList.map((item, index) => {
+                const isActive = activeCard === index;
+
+                return (
+                  <motion.div
+                    key={item.num}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.12 }}
+                    onMouseEnter={() => setActiveCard(index)}
+                    className={`p-7 sm:p-8 rounded-3xl bg-[#E10600] text-white transition-all duration-300 cursor-pointer ${
+                      item.rotation
+                    } ${
+                      isActive
+                        ? "shadow-[0_20px_40px_rgba(225,6,0,0.35)] scale-[1.03] ring-4 ring-red-300"
+                        : "hover:scale-[1.02] shadow-xl opacity-95"
+                    }`}
                   >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="font-heading text-4xl sm:text-5xl font-black text-white/40">
+                        {item.num}
+                      </span>
+                      <span className="w-3 h-3 rounded-full bg-white/70" />
+                    </div>
+
+                    <h3 className="font-heading text-xl sm:text-2xl text-white tracking-tight mb-3">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-sm text-white/90 leading-relaxed font-normal">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Elegant Italic Serif Caption at bottom right */}
+            <div className="mt-8 text-right">
+              <span className="font-serif-italic text-sm sm:text-base text-gray-500">
+                &ldquo;Turning ideas into reality&rdquo;
+              </span>
+            </div>
+
+          </div>
+
         </div>
 
       </div>

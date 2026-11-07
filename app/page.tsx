@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import AboutSection from "./components/AboutSection";
 import ExpertiseSection from "./components/ExpertiseSection";
 import StackSection from "./components/StackSection";
 import ProjectsSection from "./components/ProjectsSection";
@@ -10,32 +11,35 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-[#111827] font-sans selection:bg-[#E63946] selection:text-white">
-      {/* Navigation */}
+    <div className="min-h-screen bg-white text-[#111111] font-sans selection:bg-[#E10600] selection:text-white">
+      {/* Sticky Clean Navbar with "Fatima ." Wordmark */}
       <Navbar />
 
-      {/* Main Portfolio Sections */}
+      {/* Main Content Flow */}
       <main>
-        {/* Hero Section with Animated Video Window */}
+        {/* Full-Screen Pure Red Hero with Cut-out Photo & Voice-Note Card */}
         <Hero />
 
-        {/* Expertise Section */}
+        {/* About "Hello!" Section with Tilted Hanging ID Badge */}
+        <AboutSection />
+
+        {/* My Expertise with Tilted Red Cards along Dotted Path */}
         <ExpertiseSection />
 
-        {/* Technical Stack */}
+        {/* Technical Stack Categorized Grid */}
         <StackSection />
 
-        {/* Featured Ventures & Projects */}
+        {/* Featured Work with Project Cards & Other Repositories */}
         <ProjectsSection />
 
-        {/* Credentials & Recognition */}
+        {/* System Badges with Horizontal Scrolling Credentials Track */}
         <CredentialsSection />
 
-        {/* Contact Form with Giant Typography */}
+        {/* Contact Section with Gigantic CONTACT & Overlapping Red Form Panel */}
         <ContactSection />
       </main>
 
-      {/* Iconic Statement Footer */}
+      {/* Footer with Giant Screen-Width "fatima." Wordmark */}
       <Footer />
     </div>
   );
