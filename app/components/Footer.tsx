@@ -1,50 +1,43 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-[#0B0D13] text-white pt-20 pb-14 border-t border-zinc-800">
+    <footer className="bg-[#111827] text-white pt-20 pb-12 overflow-hidden border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Massive Statement Brand Text (Exactly like sushmita. in reference) */}
-        <div className="pb-12 border-b border-zinc-800/80">
-          <span className="text-[14vw] font-black lowercase tracking-tighter leading-none text-white select-none block">
-            fatima<span className="text-[#CE1126]">.</span>
-          </span>
+        {/* Top Footer Navigation / Credits */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pb-16 border-b border-gray-800 text-sm text-gray-400">
+          <div className="flex items-center gap-6">
+            <Link href="#home" className="hover:text-white transition-colors">
+              Home
+            </Link>
+            <Link href="#expertise" className="hover:text-white transition-colors">
+              Expertise
+            </Link>
+            <Link href="#skills" className="hover:text-white transition-colors">
+              Skills
+            </Link>
+            <Link href="#projects" className="hover:text-white transition-colors">
+              Projects
+            </Link>
+            <Link href="#contact" className="hover:text-white transition-colors">
+              Contact
+            </Link>
+          </div>
+
+          <div className="text-xs text-gray-500">
+            © {new Date().getFullYear()} Fatima Binta Wada. All rights reserved.
+          </div>
         </div>
 
-        {/* Footer Nav & Credits */}
-        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs text-zinc-400">
-          <div>
-            &copy; {currentYear} Fatima Binta Wada. All rights reserved. · Technology Entrepreneur &amp; Founder
-          </div>
-
-          <div className="flex flex-wrap items-center gap-6 font-medium">
-            <a href="#home" className="hover:text-white transition-colors">Home</a>
-            <a href="#expertise" className="hover:text-white transition-colors">Expertise</a>
-            <a href="#skills" className="hover:text-white transition-colors">Skills</a>
-            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-            <a href="#credentials" className="hover:text-white transition-colors">Credentials</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-            <span className="text-zinc-700">|</span>
-            <a
-              href="https://www.linkedin.com/in/fatima-wada-0b43ab399"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#CE1126] transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/fatimawada"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              GitHub
-            </a>
-          </div>
+        {/* Massive Screen-Width Typography: fatima. */}
+        <div className="pt-12 sm:pt-16 select-none overflow-hidden text-center">
+          <span className="block text-[18vw] sm:text-[19vw] font-black tracking-tighter text-white/90 leading-none lowercase pointer-events-none transition-all">
+            fatima<span className="text-[#E63946]">.</span>
+          </span>
         </div>
 
       </div>

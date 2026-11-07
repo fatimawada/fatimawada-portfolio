@@ -1,47 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fatimawada.com"),
-  title: "Fatima Binta Wada | Technology Entrepreneur, Founder & Innovation Leader",
+  title: "Fatima Binta Wada | Technology Entrepreneur & Full-Stack Developer",
   description:
-    "Fatima Binta Wada is a Nigerian technology entrepreneur, founder, and product leader building technology and infrastructure for a more inclusive and sustainable future across financial infrastructure, climate finance, digital health, and AI.",
+    "Fatima Binta Wada is a Technology Entrepreneur & Full-Stack Developer building fast, scalable, and secure digital products, focusing on transactional trust and infrastructure.",
   keywords: [
     "Fatima Binta Wada",
     "Fatima Wada",
     "Technology Entrepreneur",
+    "Full-Stack Developer",
     "Founder",
-    "Product and Technology Leader",
     "Relyvora",
-    "Relyvora Foundation",
-    "Social Commerce Trust Infrastructure",
-    "Anchor Technologies Limited",
     "PulseClime",
-    "Climate Finance Infrastructure",
     "Bite2Care",
-    "SnakeHack Africa",
-    "Wellcome Trust Snakebite",
-    "ChaseFree",
-    "Microbiology Bayero University Kano",
-    "African Technology Ventures",
-    "Nigeria Technology Entrepreneur",
+    "Nigeria",
   ],
   authors: [{ name: "Fatima Binta Wada" }],
   openGraph: {
-    title: "Fatima Binta Wada | Technology Entrepreneur, Founder & Innovation Leader",
+    title: "Fatima Binta Wada | Technology Entrepreneur & Full-Stack Developer",
     description:
-      "Building technology and infrastructure for a more inclusive and sustainable future.",
+      "I build fast, scalable, and secure digital products, focusing on transactional trust and infrastructure.",
     url: "https://fatimawada.com",
     siteName: "Fatima Binta Wada",
     locale: "en_US",
@@ -51,24 +38,16 @@ export const metadata: Metadata = {
         url: "/images/fatima_headset.jpg",
         width: 1200,
         height: 1500,
-        alt: "Fatima Binta Wada - Technology Entrepreneur & Founder",
+        alt: "Fatima Binta Wada - Technology Entrepreneur & Full-Stack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fatima Binta Wada | Technology Entrepreneur & Founder",
+    title: "Fatima Binta Wada | Technology Entrepreneur & Full-Stack Developer",
     description:
-      "Building technology and infrastructure for a more inclusive and sustainable future.",
+      "I build fast, scalable, and secure digital products, focusing on transactional trust and infrastructure.",
     images: ["/images/fatima_headset.jpg"],
-  },
-  icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "32x32" },
-    ],
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
   },
 };
 
@@ -78,11 +57,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
-    >
-      <body className="min-h-full flex flex-col bg-white text-[#111827] selection:bg-[#CE1126] selection:text-white">
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} antialiased bg-white text-[#111827]`}>
         {children}
       </body>
     </html>

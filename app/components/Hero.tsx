@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(false);
 
-  // Auto-play immediately with speech on load
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Attempt unmuted playback immediately on page load
+    // Attempt immediate unmuted autoplay
     video.muted = false;
     const playPromise = video.play();
 
@@ -21,8 +21,7 @@ export default function Hero() {
           setIsMuted(false);
         })
         .catch(() => {
-          // If browser restricts unmuted autoplay before interaction,
-          // play muted first and unlock audio on very first mousemove/scroll/tap
+          // If browser restricts unmuted autoplay, start muted and unlock on first user gesture
           video.muted = true;
           video.play();
           setIsMuted(true);
@@ -53,37 +52,41 @@ export default function Hero() {
   };
 
   return (
-    <section
-      id="home"
-      className="relative bg-[#CE1126] text-white pt-10 pb-28 sm:pt-16 sm:pb-36 overflow-hidden"
-    >
-      {/* Subtle Depth Gradients */}
-      <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/20 via-transparent to-black/30" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#A50D1D] blur-3xl opacity-50 pointer-events-none" />
-      <div className="absolute top-12 right-0 w-80 h-80 rounded-full bg-[#E50914] blur-3xl opacity-40 pointer-events-none" />
+    <section id="home" className="relative w-full overflow-hidden">
+      {/* 50/50 Split Desktop Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-5rem)]">
+        
+        {/* Left Side: Primary Red Background (#E63946) with White Text */}
+        <div className="bg-[#E63946] text-white flex items-center justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 relative">
+          {/* Subtle architectural depth accents */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-black/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          {/* Left Column: Heading, Bio & Buttons (Matching Reference Exactly) */}
-          <div className="lg:col-span-6 flex flex-col items-start space-y-6">
-            <span className="text-xl sm:text-2xl font-medium tracking-tight text-white/95">
-              Hi, I&apos;m a
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-xl w-full flex flex-col items-start space-y-7 relative z-10"
+          >
+            <span className="inline-block px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white/95 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+              Technology Leader &amp; Innovator
             </span>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-white">
-              Technology Entrepreneur
+            {/* Headline Layout */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
+              Hi, I&apos;m Fatima Binta Wada, a Technology Entrepreneur &amp; Full-Stack Developer.
             </h1>
 
-            <p className="text-base sm:text-lg text-white/90 max-w-lg leading-relaxed">
-              I build technology, financial infrastructure, and modern digital solutions across emerging markets and beyond.
+            {/* Sub-text Layout */}
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed font-normal">
+              I build fast, scalable, and secure digital products, focusing on transactional trust and infrastructure.
             </p>
 
-            {/* Two Main Rounded Pill CTA Buttons */}
+            {/* Call To Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4 w-full sm:w-auto">
               <a
                 href="#projects"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white text-[#CE1126] font-bold text-sm sm:text-base hover:bg-white/95 active:scale-95 transition-all shadow-xl"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white text-[#E63946] font-bold text-sm sm:text-base hover:bg-white/95 active:scale-95 transition-all shadow-xl"
               >
                 View My Work
               </a>
@@ -95,86 +98,51 @@ export default function Hero() {
                 Contact Me
               </a>
             </div>
-          </div>
+          </motion.div>
+        </div>
 
-          {/* Right Column: Character Video & Angled Laptop (Seamless, Unboxed, Matching Reference) */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end relative">
-            <div className="relative w-full max-w-md sm:max-w-lg flex justify-center">
-              
-              {/* Unboxed Seamless Character Video */}
-              <div className="relative w-full aspect-[4/5] overflow-hidden rounded-3xl [mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]">
-                <video
-                  ref={videoRef}
-                  src="/media/fatima_greeting.mp4"
-                  poster="/media/fatima_poster.jpg"
-                  autoPlay
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover object-top select-none pointer-events-none"
-                />
-              </div>
+        {/* Right Side: Crisp White Background (#FFFFFF) with Continuous Subtle Floating Animated Portrait */}
+        <div className="bg-[#FFFFFF] flex items-center justify-center px-6 sm:px-12 lg:px-16 py-12 lg:py-24 relative overflow-hidden">
+          {/* Subtle soft backdrop radial */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-50 via-white to-white pointer-events-none" />
 
-              {/* Minimal floating sound toggle button */}
+          {/* Continuous Subtle Floating Animation Container */}
+          <motion.div
+            animate={{ y: [-8, 8, -8] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative w-full max-w-md sm:max-w-lg aspect-[4/5] flex items-center justify-center"
+          >
+            {/* Portrait Frame with Clean Shadow */}
+            <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-gray-50">
+              <video
+                ref={videoRef}
+                src="/media/fatima_greeting.mp4"
+                poster="/media/fatima_poster.jpg"
+                autoPlay
+                loop
+                playsInline
+                className="w-full h-full object-cover object-top select-none"
+              />
+
+              {/* Sound Toggle Pill */}
               <button
                 type="button"
                 onClick={toggleSound}
-                className="absolute top-3 right-3 z-30 p-2.5 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white text-xs border border-white/20 transition-all shadow-md active:scale-95"
-                title={isMuted ? "Unmute audio" : "Mute audio"}
+                className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-md text-white text-xs font-medium border border-white/20 transition-all flex items-center gap-1.5 shadow-md active:scale-95"
+                title={isMuted ? "Unmute greeting audio" : "Mute audio"}
                 aria-label="Toggle greeting sound"
               >
-                {isMuted ? "🔇" : "🔊"}
+                <span>{isMuted ? "🔇" : "🔊"}</span>
+                <span className="hidden sm:inline">{isMuted ? "Unmute" : "Sound On"}</span>
               </button>
-
-              {/* Angled Silver Laptop Graphic (matching reference frame_01.jpg) */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-8 w-44 sm:w-60 z-20 pointer-events-none drop-shadow-2xl">
-                <svg
-                  viewBox="0 0 280 180"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-auto"
-                >
-                  {/* Laptop Lid (Angled Perspective) */}
-                  <path
-                    d="M30 40 L230 15 L260 145 L60 170 Z"
-                    fill="#D1D5DB"
-                    stroke="#9CA3AF"
-                    strokeWidth="1.5"
-                  />
-                  {/* Inner Screen Bezel Shadow */}
-                  <path
-                    d="M38 45 L224 22 L252 140 L66 163 Z"
-                    fill="#E5E7EB"
-                  />
-                  {/* Apple / Monogram Logo on Lid */}
-                  <circle cx="145" cy="92" r="14" fill="#9CA3AF" opacity="0.8" />
-                  <path
-                    d="M145 74 C148 70 152 70 153 68 C151 72 149 75 145 77 Z"
-                    fill="#9CA3AF"
-                    opacity="0.8"
-                  />
-                  {/* Laptop Base / Keyboard Lip */}
-                  <path
-                    d="M60 170 L260 145 L275 155 L75 178 Z"
-                    fill="#9CA3AF"
-                  />
-                </svg>
-              </div>
-
             </div>
-          </div>
-
+          </motion.div>
         </div>
-      </div>
 
-      {/* Seamless Fluid Wave Transition into White Section (Matching Reference frame_07.jpg) */}
-      <div className="absolute -bottom-1 inset-x-0 overflow-hidden leading-none z-10 pointer-events-none">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="relative block w-full h-12 sm:h-16 text-white fill-current"
-        >
-          <path d="M0,0 C200,90 400,-30 600,45 C800,120 1000,10 1200,60 L1200,120 L0,120 Z" />
-        </svg>
       </div>
     </section>
   );

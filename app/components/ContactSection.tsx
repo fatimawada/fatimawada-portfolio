@@ -1,146 +1,180 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
-  const [copied, setCopied] = useState(false);
-  const [formSent, setFormSent] = useState(false);
-  const email = "hello@fatimawada.com";
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    consent: false,
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSent(true);
-    setTimeout(() => setFormSent(false), 4000);
+    setSubmitted(true);
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 bg-white overflow-hidden text-[#111827]">
-      {/* Giant Background Typography: "CONTACT" (Exact style from reference) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none w-full text-center">
-        <span className="text-[18vw] font-black uppercase text-zinc-100 tracking-tighter leading-none block">
-          CONTACT
-        </span>
-      </div>
+    <section id="contact" className="py-24 sm:py-32 bg-white text-[#111827] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Split Layout: Left side bold CONTACT, Right side Red Block (#E63946) with Form */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Column: Bold Architectural "CONTACT" Typography */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 flex flex-col justify-center"
+          >
+            <span className="text-xs sm:text-sm font-bold tracking-widest text-[#E63946] uppercase">
+              Get in Touch
+            </span>
+            <h2 className="mt-2 text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter text-[#111827] leading-none uppercase">
+              CONTACT
+            </h2>
+            <p className="mt-6 text-base sm:text-lg text-gray-600 max-w-md leading-relaxed">
+              Have a venture, engineering partnership, or technical challenge to discuss? Leave your details and let&apos;s build together.
+            </p>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Floating Vibrant Crimson Red Contact Card */}
-        <div className="rounded-3xl bg-[#CE1126] text-white p-8 sm:p-12 lg:p-16 shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            
-            {/* Left: Contact Info */}
-            <div className="lg:col-span-5 space-y-6">
-              <span className="text-xs font-mono font-bold tracking-widest uppercase text-white/80">
-                Reach Out
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                Let&apos;s build infrastructure that matters.
-              </h2>
-              <p className="text-sm sm:text-base text-white/85 leading-relaxed">
-                Open to venture collaborations, fintech partnerships, speaking panels, and high-impact innovation initiatives.
+            <div className="mt-8 space-y-3 text-sm text-gray-600">
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-8 rounded-full bg-red-50 text-[#E63946] flex items-center justify-center font-bold text-xs">
+                  ✉
+                </span>
+                <span className="font-semibold text-gray-900">contact@fatimawada.com</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-8 rounded-full bg-red-50 text-[#E63946] flex items-center justify-center font-bold text-xs">
+                  📍
+                </span>
+                <span>Abuja &amp; Kano, Nigeria · Global Availability</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Red Block (#E63946) with Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7"
+          >
+            <div className="bg-[#E63946] text-white p-8 sm:p-12 lg:p-14 rounded-3xl shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
+                Send a Message
+              </h3>
+              <p className="text-white/80 text-sm mb-8">
+                Fill in the form below and I&apos;ll get back to you promptly.
               </p>
 
-              {/* Email Box */}
-              <div className="pt-4 border-t border-white/20">
-                <div className="text-xs font-mono text-white/70 mb-1">Direct Email:</div>
-                <div className="flex items-center gap-3">
-                  <a
-                    href={`mailto:${email}`}
-                    className="text-base sm:text-lg font-bold font-mono text-white hover:underline"
-                  >
-                    {email}
-                  </a>
-                  <button
-                    type="button"
-                    onClick={handleCopy}
-                    className="px-2.5 py-1 rounded bg-white/20 hover:bg-white/30 text-xs font-mono text-white transition-colors"
-                  >
-                    {copied ? "Copied!" : "Copy"}
-                  </button>
+              {submitted ? (
+                <div className="py-12 text-center space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-white text-[#E63946] flex items-center justify-center mx-auto text-xl font-bold">
+                    ✓
+                  </div>
+                  <h4 className="text-2xl font-bold">Thank You!</h4>
+                  <p className="text-white/85 text-sm">
+                    Your message has been received. I look forward to connecting with you!
+                  </p>
                 </div>
-              </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    {/* First Name */}
+                    <div>
+                      <label className="block text-xs font-semibold text-white/90 uppercase tracking-wider mb-2">
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.firstName}
+                        onChange={(e) =>
+                          setFormData({ ...formData, firstName: e.target.value })
+                        }
+                        placeholder="Fatima"
+                        className="w-full px-4 py-3 rounded-xl bg-white text-[#111827] placeholder-gray-400 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-white/80 transition-all"
+                      />
+                    </div>
 
-              {/* Social Channels */}
-              <div className="flex items-center gap-4 pt-2">
-                <a
-                  href="https://www.linkedin.com/in/fatima-wada-0b43ab399"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#CE1126] text-xs font-bold transition-all"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/fatimawada"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#CE1126] text-xs font-bold transition-all"
-                >
-                  GitHub
-                </a>
-              </div>
-            </div>
+                    {/* Last Name */}
+                    <div>
+                      <label className="block text-xs font-semibold text-white/90 uppercase tracking-wider mb-2">
+                        Last Name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.lastName}
+                        onChange={(e) =>
+                          setFormData({ ...formData, lastName: e.target.value })
+                        }
+                        placeholder="Wada"
+                        className="w-full px-4 py-3 rounded-xl bg-white text-[#111827] placeholder-gray-400 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-white/80 transition-all"
+                      />
+                    </div>
+                  </div>
 
-            {/* Right: Message Form */}
-            <div className="lg:col-span-7 bg-[#B70F20] p-6 sm:p-8 rounded-2xl shadow-inner">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Email */}
                   <div>
-                    <label className="block text-xs font-medium text-white/80 mb-1">First Name</label>
+                    <label className="block text-xs font-semibold text-white/90 uppercase tracking-wider mb-2">
+                      Email
+                    </label>
                     <input
-                      type="text"
+                      type="email"
                       required
-                      placeholder="Jane"
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-white"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      placeholder="hello@domain.com"
+                      className="w-full px-4 py-3 rounded-xl bg-white text-[#111827] placeholder-gray-400 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-white/80 transition-all"
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-medium text-white/80 mb-1">Last Name</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Doe"
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-white"
-                    />
+
+                  {/* Checkbox */}
+                  <div className="pt-2">
+                    <label className="flex items-start gap-3 text-xs text-white/90 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        required
+                        checked={formData.consent}
+                        onChange={(e) =>
+                          setFormData({ ...formData, consent: e.target.checked })
+                        }
+                        className="mt-0.5 w-4 h-4 rounded text-[#E63946] focus:ring-white accent-white"
+                      />
+                      <span>
+                        I agree to be contacted regarding this message and understand my information is kept private.
+                      </span>
+                    </label>
                   </div>
-                </div>
 
-                <div>
-                  <label className="block text-xs font-medium text-white/80 mb-1">Email Address</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="jane@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-white"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-white/80 mb-1">Message</label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Type your message here..."
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-white resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-3.5 px-6 rounded-full bg-white text-[#CE1126] font-bold text-sm uppercase tracking-wider hover:bg-white/95 transition-all shadow-lg active:scale-95"
-                >
-                  {formSent ? "Thank You! Message Sent" : "Send Message"}
-                </button>
-              </form>
+                  {/* Submit Button */}
+                  <div className="pt-4">
+                    <button
+                      type="submit"
+                      className="w-full py-4 px-8 rounded-full bg-white text-[#E63946] font-extrabold text-sm sm:text-base hover:bg-white/95 active:scale-98 transition-all shadow-xl"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
+          </motion.div>
 
-          </div>
         </div>
+
       </div>
     </section>
   );
