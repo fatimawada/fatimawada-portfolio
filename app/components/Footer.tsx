@@ -21,8 +21,11 @@ export default function Footer() {
             <Link href="#contact" className="hover:text-white transition-colors">Contact</Link>
           </div>
 
-          <div className="text-xs text-gray-500 font-medium shrink-0">
-            © {new Date().getFullYear()} Fatima Binta Wada. All rights reserved.
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-xs text-gray-500 font-medium shrink-0">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400">
+              📍 Abuja, Nigeria · Global Availability
+            </span>
+            <span>© {new Date().getFullYear()} Fatima Binta Wada. All rights reserved.</span>
           </div>
         </div>
 

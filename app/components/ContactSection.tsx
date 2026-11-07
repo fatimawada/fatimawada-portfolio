@@ -61,7 +61,7 @@ export default function ContactSection() {
                 <span className="w-8 h-8 rounded-full bg-white/10 text-[#E10600] flex items-center justify-center font-bold text-xs">
                   📍
                 </span>
-                <span>Abuja &amp; Kano, Nigeria · Global Availability</span>
+                <span>Abuja, Nigeria · Global Availability</span>
               </div>
             </div>
           </motion.div>
@@ -76,10 +76,10 @@ export default function ContactSection() {
           >
             <div className="bg-[#E10600] text-white p-8 sm:p-12 lg:p-14 rounded-3xl shadow-[0_25px_60px_rgba(225,6,0,0.35)] relative overflow-hidden border border-red-500/30">
               
-              {/* Pill Label "REACH US" */}
+              {/* Pill Label "REACH ME" */}
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3.5 py-1 rounded-full bg-white/20 text-white font-mono font-bold text-xs tracking-wider uppercase">
-                  REACH US
+                  REACH ME
                 </span>
                 <span className="text-xs text-white/70">Response within 24h</span>
               </div>

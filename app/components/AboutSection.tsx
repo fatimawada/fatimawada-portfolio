@@ -21,7 +21,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Tilted Hanging ID Badge Card */}
+          {/* Left Column: Tilted Hanging ID Badge Card (Preserved as requested) */}
           <motion.div
             initial={{ opacity: 0, rotate: -10, y: 30 }}
             whileInView={{ opacity: 1, rotate: -4, y: 0 }}
@@ -70,7 +70,7 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Headline, Body Text, Location Badge & Tech Accents */}
+          {/* Right Column: Headline, Body Text, & Floating Tech Accents */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -78,19 +78,14 @@ export default function AboutSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-7 flex flex-col items-start space-y-6"
           >
-            {/* Location Badge */}
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white text-xs font-bold border border-white/20">
-              📍 Abuja Nigeria · Building for global impact.
-            </span>
-
             {/* Headline */}
-            <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              Hello! I am a Nigerian technology entrepreneur building for global impact.
+            <h2 className="font-heading text-5xl sm:text-7xl font-extrabold text-white tracking-tight">
+              Hello!
             </h2>
 
-            {/* Body Text */}
+            {/* Body Text (Exact requested wording) */}
             <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-normal">
-              My work involves identifying systemic problems and developing technology-driven solutions. From building trust infrastructure for digital commerce to exploring climate finance systems and improving healthcare coordination, I am interested in building solutions that extend beyond technology itself. I combine technical execution, scientific thinking, and entrepreneurial leadership to build practical solutions for emerging markets and global challenges.
+              My name is Fatima Binta Wada. I am a Nigerian technology entrepreneur building for global impact My work involves identifying systemic problems and developing technology-driven solutions. From building trust infrastructure for digital commerce to exploring climate finance systems and improving healthcare coordination, I am interested in building solutions that extend beyond technology itself. I combine technical execution, scientific thinking, and entrepreneurial leadership to build practical solutions for emerging markets and global challenges.
             </p>
 
             {/* Floating Tech Badges */}

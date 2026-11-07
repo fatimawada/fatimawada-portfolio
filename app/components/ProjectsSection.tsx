@@ -9,8 +9,8 @@ const projects = [
     title: "Bite2Care",
     role: "Product & Technology Lead (Multidisciplinary Team)",
     description:
-      "A technology-enabled emergency coordination system addressing delays in snakebite treatment in rural communities. Features low-bandwidth routing, facility readiness verification, and frontline WhatsApp interaction.",
-    badge: "Wellcome Trust SnakeHack Africa Finalist",
+      "A technology-enabled emergency coordination system addressing critical delays in snakebite treatment in rural communities. Features low-bandwidth hospital routing, verified facility anti-venom readiness, and frontline WhatsApp interactions.",
+    badge: "Wellcome Trust SnakeHack Africa",
     tags: ["Digital Health", "Offline-First", "Geospatial Routing", "WhatsApp API"],
     link: "https://github.com/fatimawada",
   },
@@ -19,9 +19,9 @@ const projects = [
     title: "PulseClime Telemetry & MRV",
     role: "Founder & Product Architect",
     description:
-      "Climate-finance milestone verification and localized environmental telemetry engine automating capital releases and audit trails for clean energy deployment in vulnerable ecosystems.",
+      "A decentralized measurement, reporting, and verification (MRV) protocol connecting localized environmental sensor telemetry and clean energy metrics to automated climate-finance disbursement workflows, ensuring capital flows directly to verified ecological milestones.",
     badge: "Climate Innovation",
-    tags: ["Climate MRV", "Milestone Engine", "TypeScript", "Environmental Data"],
+    tags: ["Climate MRV", "Milestone Engine", "Decentralized Telemetry", "CleanTech"],
     link: "https://github.com/fatimawada",
   },
   {
@@ -29,9 +29,9 @@ const projects = [
     title: "Relyvora Trust Protocols",
     role: "Lead Systems Architect",
     description:
-      "Multi-party conditional state machines, milestone verification hooks, and dispute mediation APIs providing transaction protection for independent social commerce vendors in Nigeria.",
+      "A multi-party transaction-protection architecture combining conditional escrow state machines, verified delivery milestones, and automated dispute mediation protocols to eliminate counterparty risk in informal social commerce across Africa.",
     badge: "Trust Infrastructure",
-    tags: ["Escrow Protocols", "State Machines", "Node.js", "Payment APIs"],
+    tags: ["Escrow Protocols", "State Machines", "Dispute Arbitration", "Fintech APIs"],
     link: "https://github.com/fatimawada",
   },
 ];
