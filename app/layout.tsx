@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/fatima-binta-wada.jpg",
+        url: "/images/fatima_headset.jpg",
         width: 1200,
         height: 1500,
         alt: "Fatima Binta Wada - Technology Entrepreneur & Founder",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Fatima Binta Wada | Technology Entrepreneur & Founder",
     description:
       "Building technology and infrastructure for a more inclusive and sustainable future.",
-    images: ["/images/fatima-binta-wada.jpg"],
+    images: ["/images/fatima_headset.jpg"],
   },
   icons: {
     icon: [
@@ -82,7 +82,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#08080A] text-[#F4F4F5] selection:bg-[#10B981]/25 selection:text-white">
+      <body className="min-h-full flex flex-col bg-white text-[#111827] selection:bg-[#CE1126] selection:text-white">
         {children}
       </body>
     </html>
