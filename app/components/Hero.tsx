@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import InteractiveCharacterHero from "./InteractiveCharacterHero";
 
 export default function Hero() {
   const emailAddress = "hello@fatimawada.com";
@@ -119,42 +119,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Column: Founder Portrait Composition */}
+        {/* Right Column: Interactive Character Hero */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-sm sm:max-w-md">
-            {/* Ambient Aura Frame */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-[#10B981]/20 via-white/5 to-[#D4AF37]/15 rounded-3xl blur-2xl opacity-60" />
-
-            {/* Main Portrait Card with Smoked Glass Container */}
-            <div className="relative p-2.5 sm:p-3 rounded-3xl glass-card border border-white/15 shadow-2xl shadow-black">
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#08080A] border border-white/10">
-                <Image
-                  src="/images/fatima-binta-wada.jpg"
-                  alt="Portrait of Fatima Binta Wada, Technology Entrepreneur, Founder and Product Leader"
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
-                  className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
-                />
-
-                {/* Editorial Gradient Overlay for Lower Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08080A]/95 via-transparent to-transparent opacity-90" />
-
-                {/* Executive Founder Badge */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl glass-card border border-white/15 backdrop-blur-xl shadow-lg">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm font-semibold text-[#F4F4F5]">Fatima Binta Wada</div>
-                      <div className="text-xs text-[#34D399] font-mono">Founder &amp; CEO · Relyvora</div>
-                    </div>
-                    <span className="px-2.5 py-1 rounded-full bg-[#10B981]/15 text-[10px] font-mono font-semibold text-[#34D399] border border-[#10B981]/30">
-                      Active Venture
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <InteractiveCharacterHero />
         </div>
       </div>
 
