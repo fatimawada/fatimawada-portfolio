@@ -1,28 +1,70 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
 
-  const toggleVoiceNote = () => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio("/media/fatima_greeting.mp4");
+  // Play greeting audio automatically on load
+  useEffect(() => {
+    const audio = new Audio("/media/fatima_greeting.mp4");
+    audioRef.current = audio;
+    audio.preload = "auto";
+
+    // Attempt immediate unmuted autoplay
+    audio.muted = false;
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlayingAudio(true);
+        })
+        .catch(() => {
+          // If browser policy blocks immediate sound without interaction,
+          // unlock audio on first user touch/scroll/pointer movement
+          const unlock = () => {
+            if (audioRef.current) {
+              audioRef.current.currentTime = 0;
+              audioRef.current.play().then(() => {
+                setIsPlayingAudio(true);
+              }).catch(() => {});
+            }
+            window.removeEventListener("pointermove", unlock);
+            window.removeEventListener("scroll", unlock);
+            window.removeEventListener("touchstart", unlock);
+            window.removeEventListener("click", unlock);
+          };
+
+          window.addEventListener("pointermove", unlock, { once: true });
+          window.addEventListener("scroll", unlock, { once: true });
+          window.addEventListener("touchstart", unlock, { once: true });
+          window.addEventListener("click", unlock, { once: true });
+        });
     }
 
+    audio.onended = () => {
+      setIsPlayingAudio(false);
+    };
+
+    return () => {
+      audio.pause();
+    };
+  }, []);
+
+  const toggleAudio = () => {
+    if (!audioRef.current) return;
     if (isPlayingAudio) {
       audioRef.current.pause();
       setIsPlayingAudio(false);
     } else {
       audioRef.current.currentTime = 0;
-      audioRef.current
-        .play()
-        .then(() => setIsPlayingAudio(true))
-        .catch(() => setIsPlayingAudio(false));
-      audioRef.current.onended = () => setIsPlayingAudio(false);
+      audioRef.current.play().then(() => {
+        setIsPlayingAudio(true);
+      }).catch(() => {});
     }
   };
 
@@ -31,77 +73,64 @@ export default function Hero() {
       id="home"
       className="relative w-full bg-[#E10600] text-white pt-28 sm:pt-36 pb-32 sm:pb-44 overflow-hidden"
     >
-      {/* Background radial accent glow */}
+      {/* Subtle depth lighting */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15),_transparent_60%)] pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#A00400]/40 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Heading, Bio, Voice-Note Card, CTA Buttons */}
+          {/* Left Column: Top Badge, Headline, Sub-text, Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-7 flex flex-col items-start space-y-6"
           >
-            {/* Small pill-shaped label */}
+            {/* Top Badge */}
             <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider border border-white/20">
-              Technology Leader &amp; Innovator
+              TECHNOLOGY LEADER &amp; INNOVATOR
             </span>
 
-            {/* Huge bold white heading (two lines) */}
-            <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight">
-              Hi, I&apos;m a<br />
-              Technology Entrepreneur
+            {/* Headline (h1) */}
+            <h1 className="font-heading text-4xl sm:text-6xl lg:text-[4.2rem] text-white leading-[1.08] tracking-tight">
+              Hi, I&apos;m Fatima Binta Wada, a Technology Entrepreneur &amp; Product Builder.
             </h1>
 
-            {/* Short white paragraph */}
-            <p className="text-base sm:text-lg text-white/95 max-w-xl leading-relaxed font-normal">
-              I build fast, scalable, and secure digital products, focusing on transactional trust and infrastructure across emerging markets and beyond.
+            {/* Sub-text (p) */}
+            <p className="text-base sm:text-lg lg:text-xl text-white/95 max-w-xl leading-relaxed font-normal">
+              I work at the intersection of financial infrastructure, climate innovation, and digital health. I build early-stage ventures and lead multidisciplinary initiatives to solve systemic problems across emerging markets and beyond.
             </p>
 
-            {/* Voice-Note Card with Quote */}
-            <div className="w-full max-w-lg p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg flex items-center gap-4">
+            {/* Discreet Audio Waveform Indicator & Sound Toggle */}
+            <div className="flex items-center gap-3 pt-1">
               <button
                 type="button"
-                onClick={toggleVoiceNote}
-                className="w-12 h-12 rounded-full bg-white text-[#E10600] flex items-center justify-center font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-md shrink-0"
-                aria-label={isPlayingAudio ? "Pause voice note" : "Play voice note"}
+                onClick={toggleAudio}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold transition-all active:scale-95"
+                title={isPlayingAudio ? "Pause greeting" : "Replay greeting"}
+                aria-label="Toggle voice greeting"
               >
-                {isPlayingAudio ? "⏸" : "▶"}
+                <span>{isPlayingAudio ? "🔊 Voice Playing" : "🔈 Voice Greeting"}</span>
+                {/* Micro waveform graphic */}
+                <span className="flex items-center gap-0.5 h-3.5">
+                  {[8, 14, 10, 16, 11].map((h, i) => (
+                    <span
+                      key={i}
+                      style={{ height: `${h}px` }}
+                      className={`w-0.5 rounded-full bg-white transition-all ${
+                        isPlayingAudio ? "animate-pulse" : "opacity-50"
+                      }`}
+                    />
+                  ))}
+                </span>
               </button>
-              
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-white/80">
-                    Voice Note {isPlayingAudio && "• Playing"}
-                  </span>
-                  <span className="text-xs text-white/60">0:04</span>
-                </div>
-                <p className="text-xs sm:text-sm text-white font-medium italic line-clamp-2">
-                  &ldquo;Welcome to my portfolio! I&apos;m excited to share my work and connect with you.&rdquo;
-                </p>
-              </div>
-
-              {/* Decorative Audio Waveform */}
-              <div className="hidden sm:flex items-center gap-1 shrink-0 h-6">
-                {[12, 22, 16, 24, 18, 14, 20].map((h, i) => (
-                  <span
-                    key={i}
-                    style={{ height: `${h}px` }}
-                    className={`w-1 rounded-full bg-white transition-all ${
-                      isPlayingAudio ? "animate-pulse" : "opacity-60"
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
 
-            {/* Two Pill Buttons: View My Work & Contact Me */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
               <a
-                href="#projects"
+                href="#ventures"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white text-[#111111] font-bold text-sm sm:text-base hover:bg-white/95 active:scale-95 transition-all shadow-xl"
               >
                 View My Work
@@ -125,14 +154,14 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-sm sm:max-w-md aspect-[3/4] flex items-center justify-center">
               
-              {/* Subtle back illumination glow */}
+              {/* Back illumination glow */}
               <div className="absolute inset-4 rounded-3xl bg-white/20 blur-2xl pointer-events-none" />
 
               {/* Portrait cut-out card container overlapping the red background */}
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-gradient-to-b from-white/10 to-black/20">
                 <Image
                   src="/images/fatima_headset_portrait.jpg"
-                  alt="Fatima Binta Wada"
+                  alt="Fatima Binta Wada - Technology Entrepreneur & Product Builder"
                   fill
                   priority
                   className="object-cover object-top"

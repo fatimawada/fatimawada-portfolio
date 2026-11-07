@@ -6,10 +6,11 @@ import Link from "next/link";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Expertise", href: "#expertise" },
-  { name: "Skills", href: "#skills" },
+  { name: "Ventures", href: "#ventures" },
   { name: "Projects", href: "#projects" },
-  { name: "Certifications", href: "#certifications" },
+  { name: "Experience & Leadership", href: "#experience" },
+  { name: "Research", href: "#research" },
+  { name: "Speaking & Recognition", href: "#recognition" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -29,7 +30,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100/80 py-3.5"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100/80 py-3.5"
           : "bg-transparent py-5"
       }`}
     >
@@ -39,19 +40,19 @@ export default function Navbar() {
           {/* Logo "Fatima ." with pure red dot */}
           <Link
             href="#home"
-            className="font-heading text-2xl sm:text-3xl text-[#111111] hover:opacity-90 transition-opacity flex items-center"
+            className="font-heading text-2xl sm:text-3xl text-[#111111] hover:opacity-90 transition-opacity flex items-center shrink-0"
           >
             <span>Fatima</span>
             <span className="text-[#E10600] ml-1 text-3xl font-black">.</span>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden xl:flex items-center gap-5 lg:gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-semibold text-gray-800 hover:text-[#E10600] transition-colors"
+                className="text-xs lg:text-[13px] font-semibold text-gray-800 hover:text-[#E10600] transition-colors whitespace-nowrap"
               >
                 {link.name}
               </a>
@@ -59,7 +60,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action: Small black pill button */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-3 shrink-0">
             <a
               href="#contact"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#111111] hover:bg-[#E10600] text-white text-xs font-bold tracking-wide transition-all shadow-sm active:scale-95"
@@ -72,7 +73,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-800 hover:text-[#E10600] focus:outline-none"
+            className="xl:hidden p-2 rounded-lg text-gray-800 hover:text-[#E10600] focus:outline-none"
             aria-label="Toggle menu"
           >
             <svg
@@ -103,13 +104,13 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-md border-b border-gray-200 px-4 pt-3 pb-6 space-y-3 mt-2 shadow-xl">
+        <div className="xl:hidden bg-white/98 backdrop-blur-md border-b border-gray-200 px-5 pt-3 pb-6 space-y-2.5 mt-2 shadow-xl">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base font-semibold text-gray-800 hover:text-[#E10600] py-1.5"
+              className="block text-sm font-semibold text-gray-800 hover:text-[#E10600] py-1.5"
             >
               {link.name}
             </a>

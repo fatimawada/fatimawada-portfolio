@@ -3,44 +3,59 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const expertiseList = [
+const venturesList = [
   {
     num: "01",
-    title: "Transactional Trust & Escrow",
-    desc: "Architecting multi-party escrow systems, dispute mediation logic, and automated fraud guards for informal social commerce.",
+    title: "Relyvora",
+    role: "Founder & CEO / Product & Technology Lead",
+    desc: "Building trust and payment infrastructure for social commerce in Africa. Relyvora addresses the lack of transaction protection in informal digital commerce by providing secure payment holding, verified delivery workflows, and dispute mediation. Supported by payment infrastructure partner Anchor.",
+    links: [
+      { label: "relyvora.com", href: "https://relyvora.com" },
+      { label: "ng.relyvora.com", href: "https://ng.relyvora.com" },
+    ],
     rotation: "-rotate-2",
+    isHero: true,
   },
   {
     num: "02",
-    title: "Full-Stack Web & API Engines",
-    desc: "Building performant Next.js, React, and Node.js microservices with PostgreSQL, Supabase, and resilient payment gateways.",
+    title: "PulseClime",
+    role: "Founder & Product Architect",
+    desc: "A climate-finance infrastructure initiative. PulseClime explores how climate intelligence, localized environmental data, and financial mechanisms can work together to improve resilience and unlock accessible climate finance for vulnerable communities.",
+    links: [],
     rotation: "rotate-2",
+    isHero: false,
   },
   {
     num: "03",
-    title: "Climate-Finance & MRV Systems",
-    desc: "Designing verifiable measurement, reporting, and automated milestone-disbursement pipelines for clean technology.",
+    title: "ChaseFree",
+    role: "Founder & Full-Stack Product Builder",
+    desc: "An AI-enabled accounts receivable and payment recovery SaaS platform automating overdue invoice workflows and improving cash-flow visibility for service businesses.",
+    links: [],
     rotation: "-rotate-1",
+    isHero: false,
   },
   {
     num: "04",
-    title: "Digital Health & Emergency Triage",
-    desc: "Low-bandwidth, offline-resilient healthcare routing algorithms connecting remote patients to anti-venom referral hubs.",
+    title: "Relyvora Foundation",
+    role: "Social Impact Arm",
+    desc: "The social-impact arm of the Relyvora vision, focused on expanding digital inclusion, economic participation, and opportunities for underserved communities.",
+    links: [],
     rotation: "rotate-3",
+    isHero: false,
   },
 ];
 
-export default function ExpertiseSection() {
+export default function VenturesSection() {
   const [activeCard, setActiveCard] = useState<number>(0);
 
   return (
-    <section id="expertise" className="py-24 sm:py-36 bg-white text-[#111111] relative overflow-hidden">
+    <section id="ventures" className="py-24 sm:py-36 bg-white text-[#111111] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Layout */}
+        {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           
-          {/* Left Column: Pill, Bold Heading with Hand-Drawn Arrow, Description */}
+          {/* Left Column: Eyebrow, Header with Hand-Drawn Underline, Description */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,12 +65,12 @@ export default function ExpertiseSection() {
           >
             {/* Small pill-shaped section label */}
             <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-gray-100 text-[#E10600] text-xs font-bold uppercase tracking-wider border border-gray-200">
-              My Expertise
+              Venture Ecosystem
             </span>
 
             {/* Large bold heading */}
             <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl text-[#111111] mt-5 leading-[1.12]">
-              Building Modern Digital Solutions with Code &amp; AI
+              Featured Ventures
             </h2>
 
             {/* Hand-Drawn Curved Red Underline Vector */}
@@ -74,12 +89,12 @@ export default function ExpertiseSection() {
             </svg>
 
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-md">
-              Combining full-stack software development, transactional security, and cloud technologies to create scalable and impactful digital systems.
+              Building scalable infrastructure, payment protocols, and digital enterprises designed to eliminate systemic friction across emerging markets.
             </p>
 
             {/* Hand-Drawn Dashed Arrow pointing to the cards */}
             <div className="mt-8 hidden lg:flex items-center gap-3 text-[#E10600]">
-              <span className="text-xs font-bold uppercase tracking-wider">Explore Capabilities</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Explore Ventures</span>
               <svg width="100" height="40" viewBox="0 0 100 40" fill="none" className="text-[#E10600]">
                 <path
                   d="M10 20 C 40 10, 70 30, 90 20"
@@ -107,7 +122,7 @@ export default function ExpertiseSection() {
 
             {/* Grid of Red Rounded Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
-              {expertiseList.map((item, index) => {
+              {venturesList.map((item, index) => {
                 const isActive = activeCard === index;
 
                 return (
@@ -121,25 +136,46 @@ export default function ExpertiseSection() {
                     className={`p-7 sm:p-8 rounded-3xl bg-[#E10600] text-white transition-all duration-300 cursor-pointer ${
                       item.rotation
                     } ${
+                      item.isHero ? "sm:col-span-2 shadow-2xl" : ""
+                    } ${
                       isActive
-                        ? "shadow-[0_20px_40px_rgba(225,6,0,0.35)] scale-[1.03] ring-4 ring-red-300"
-                        : "hover:scale-[1.02] shadow-xl opacity-95"
+                        ? "shadow-[0_20px_45px_rgba(225,6,0,0.38)] scale-[1.02] ring-4 ring-red-300"
+                        : "hover:scale-[1.01] shadow-xl opacity-95"
                     }`}
                   >
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-3">
                       <span className="font-heading text-4xl sm:text-5xl font-black text-white/40">
                         {item.num}
                       </span>
-                      <span className="w-3 h-3 rounded-full bg-white/70" />
+                      <span className="text-[11px] font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-white/20 text-white">
+                        {item.role}
+                      </span>
                     </div>
 
-                    <h3 className="font-heading text-xl sm:text-2xl text-white tracking-tight mb-3">
+                    <h3 className="font-heading text-2xl sm:text-3xl text-white tracking-tight mb-3">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-white/90 leading-relaxed font-normal">
+                    <p className="text-sm sm:text-base text-white/95 leading-relaxed font-normal">
                       {item.desc}
                     </p>
+
+                    {item.links.length > 0 && (
+                      <div className="mt-5 pt-4 border-t border-white/20 flex flex-wrap items-center gap-3">
+                        {item.links.map((link) => (
+                          <a
+                            key={link.label}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#E10600] text-xs font-bold hover:bg-white/90 transition-colors"
+                          >
+                            <span>{link.label}</span>
+                            <span>↗</span>
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 );
               })}

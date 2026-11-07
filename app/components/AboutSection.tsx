@@ -59,7 +59,7 @@ export default function AboutSection() {
                 <div className="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-between text-xs">
                   <div>
                     <span className="block font-bold text-white text-sm">Fatima B. Wada</span>
-                    <span className="text-gray-400 text-[11px]">Founder &amp; Tech Lead</span>
+                    <span className="text-gray-400 text-[11px]">Technology Entrepreneur &amp; Founder</span>
                   </div>
                   <span className="px-2.5 py-1 rounded-full bg-[#E10600] text-white font-mono font-bold text-[10px]">
                     VERIFIED
@@ -70,7 +70,7 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: "Hello!" Headline, Intro, & Floating Tech Badges */}
+          {/* Right Column: Headline, Body Text, Location Badge & Tech Accents */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -78,41 +78,38 @@ export default function AboutSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-7 flex flex-col items-start space-y-6"
           >
-            <h2 className="font-heading text-5xl sm:text-7xl font-extrabold text-white tracking-tight">
-              Hello!
+            {/* Location Badge */}
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white text-xs font-bold border border-white/20">
+              📍 Abuja Nigeria · Building for global impact.
+            </span>
+
+            {/* Headline */}
+            <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              Hello! I am a Nigerian technology entrepreneur building for global impact.
             </h2>
 
-            <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-xl font-normal">
-              Hi, my name is{" "}
-              <span className="inline-block px-3 py-1 mx-1 rounded-lg bg-white text-[#E10600] font-bold shadow-sm">
-                Fatima Binta Wada
-              </span>
-              , a passionate technology entrepreneur and full-stack software engineer dedicated to crafting clean, functional, and highly scalable web applications and decentralized trust infrastructure.
-            </p>
-
-            <p className="text-base sm:text-lg text-white/85 leading-relaxed max-w-xl">
-              From building multi-party escrow architectures for Nigerian informal vendors to prototyping climate-finance MRV pipelines, I transform complex real-world workflows into reliable code.
+            {/* Body Text */}
+            <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-normal">
+              My work involves identifying systemic problems and developing technology-driven solutions. From building trust infrastructure for digital commerce to exploring climate finance systems and improving healthcare coordination, I am interested in building solutions that extend beyond technology itself. I combine technical execution, scientific thinking, and entrepreneurial leadership to build practical solutions for emerging markets and global challenges.
             </p>
 
             {/* Floating Tech Badges */}
-            <div className="flex items-center gap-4 pt-4">
-              {/* React Tech Badge */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-md hover:scale-105 transition-transform">
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="2" />
                   <ellipse cx="12" cy="12" rx="10" ry="4.5" />
                   <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)" />
                   <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)" />
                 </svg>
-                <span className="text-sm font-bold tracking-wide">React / Next.js</span>
+                <span className="text-xs sm:text-sm font-bold tracking-wide">Product Architecture &amp; Code</span>
               </div>
 
-              {/* Node / TypeScript Badge */}
               <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-md hover:scale-105 transition-transform">
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2L2 7.5v9L12 22l10-5.5v-9L12 2zm-1 16.5l-7-3.85V9.45l7 3.85v5.2zm2 0v-5.2l7-3.85v5.2l-7 3.85zM12 4.15l6.5 3.55-6.5 3.55-6.5-3.55L12 4.15z" />
                 </svg>
-                <span className="text-sm font-bold tracking-wide">TypeScript &amp; Node</span>
+                <span className="text-xs sm:text-sm font-bold tracking-wide">Financial &amp; Trust Infrastructure</span>
               </div>
             </div>
 

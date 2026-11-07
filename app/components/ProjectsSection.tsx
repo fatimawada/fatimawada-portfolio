@@ -5,48 +5,51 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    category: "FINTECH & TRANSACTION TRUST",
-    title: "Relyvora",
-    description:
-      "A transaction-protection checkout and escrow platform designed for independent social commerce vendors in Nigeria.",
-    tags: ["Next.js", "Node.js", "Escrow APIs", "Supabase"],
-    link: "https://github.com/fatimawada",
-    type: "Platform",
-  },
-  {
-    category: "CLIMATE INFRASTRUCTURE",
-    title: "Pulseclime",
-    description:
-      "A climate-finance infrastructure prototype managing milestone verification and disbursement workflows for renewable energy.",
-    tags: ["Climate MRV", "Milestone Engine", "TypeScript", "CleanTech"],
-    link: "https://github.com/fatimawada",
-    type: "Infrastructure",
-  },
-  {
-    category: "EMERGENCY DIGITAL HEALTH",
+    category: "GLOBAL HEALTH INNOVATION",
     title: "Bite2Care",
+    role: "Product & Technology Lead (Multidisciplinary Team)",
     description:
-      "An emergency health response platform connecting rural communities to referral pathways for snakebite care.",
-    tags: ["Offline-First", "Geospatial Routing", "Triage Logic", "Wellcome Finalist"],
+      "A technology-enabled emergency coordination system addressing delays in snakebite treatment in rural communities. Features low-bandwidth routing, facility readiness verification, and frontline WhatsApp interaction.",
+    badge: "Wellcome Trust SnakeHack Africa Finalist",
+    tags: ["Digital Health", "Offline-First", "Geospatial Routing", "WhatsApp API"],
     link: "https://github.com/fatimawada",
-    type: "Healthcare",
+  },
+  {
+    category: "CLIMATE FINANCE INFRASTRUCTURE",
+    title: "PulseClime Telemetry & MRV",
+    role: "Founder & Product Architect",
+    description:
+      "Climate-finance milestone verification and localized environmental telemetry engine automating capital releases and audit trails for clean energy deployment in vulnerable ecosystems.",
+    badge: "Climate Innovation",
+    tags: ["Climate MRV", "Milestone Engine", "TypeScript", "Environmental Data"],
+    link: "https://github.com/fatimawada",
+  },
+  {
+    category: "FINTECH & TRANSACTIONAL TRUST",
+    title: "Relyvora Trust Protocols",
+    role: "Lead Systems Architect",
+    description:
+      "Multi-party conditional state machines, milestone verification hooks, and dispute mediation APIs providing transaction protection for independent social commerce vendors in Nigeria.",
+    badge: "Trust Infrastructure",
+    tags: ["Escrow Protocols", "State Machines", "Node.js", "Payment APIs"],
+    link: "https://github.com/fatimawada",
   },
 ];
 
 const otherRepos = [
   {
-    name: "anchor-escrow-contracts",
-    desc: "Smart escrow state machines and dispute arbitration protocols.",
+    name: "bite2care-triage-routing",
+    desc: "Low-bandwidth hospital facility readiness and emergency anti-venom dispatch logic.",
+    language: "TypeScript / Node",
+  },
+  {
+    name: "relyvora-escrow-engine",
+    desc: "Dispute resolution state machines and multi-party payment holding contracts.",
     language: "TypeScript",
   },
   {
-    name: "snakehack-triage-core",
-    desc: "Offline-first clinical referral engine with SMS/USSD fallback routing.",
-    language: "Python / Fastify",
-  },
-  {
-    name: "carbon-mrv-telemetry",
-    desc: "Data ingestion pipeline parsing remote solar inverter telemetry into audit trails.",
+    name: "climate-mrv-telemetry",
+    desc: "Solar inverter ingestion pipeline parsing field telemetry into verifiable milestone records.",
     language: "Node.js / Timescale",
   },
 ];
@@ -66,14 +69,14 @@ export default function ProjectsSection() {
         >
           {/* Small pill-shaped section label */}
           <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white text-[#E10600] text-xs font-bold uppercase tracking-wider border border-gray-200 shadow-2xs">
-            Featured Work
+            Initiatives &amp; Systems
           </span>
 
           <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl text-[#111111] mt-4 leading-tight">
-            Projects That Define My{" "}
+            Collaborative &amp; Innovation{" "}
             <span className="relative inline-block">
-              Journey
-              {/* Red Curved Underline beneath "Journey" */}
+              Projects
+              {/* Red Curved Underline beneath "Projects" */}
               <svg
                 className="absolute -bottom-2.5 left-0 w-full h-3 text-[#E10600]"
                 viewBox="0 0 160 12"
@@ -91,7 +94,7 @@ export default function ProjectsSection() {
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-gray-600">
-            A selection of production systems, decentralized infrastructure, and social impact platforms I have built.
+            A curated selection of multidisciplinary systems, clinical emergency routing platforms, and open research prototypes.
           </p>
         </motion.div>
 
@@ -107,14 +110,22 @@ export default function ProjectsSection() {
               className="p-8 sm:p-9 rounded-3xl bg-white border border-gray-200/80 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                {/* Small red uppercase category label */}
-                <span className="text-[11px] font-bold tracking-widest uppercase text-[#E10600]">
-                  {project.category}
-                </span>
+                <div className="flex items-center justify-between gap-3 mb-2">
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-[#E10600]">
+                    {project.category}
+                  </span>
+                  <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-red-50 text-[#E10600] border border-red-100">
+                    {project.badge}
+                  </span>
+                </div>
 
-                <h3 className="font-heading text-2xl sm:text-3xl text-[#111111] mt-3 group-hover:text-[#E10600] transition-colors">
+                <h3 className="font-heading text-2xl sm:text-3xl text-[#111111] mt-2 group-hover:text-[#E10600] transition-colors">
                   {project.title}
                 </h3>
+
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mt-1">
+                  {project.role}
+                </p>
 
                 <p className="mt-4 text-sm text-gray-600 leading-relaxed font-normal">
                   {project.description}
@@ -141,7 +152,7 @@ export default function ProjectsSection() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#111111] group-hover:text-[#E10600] transition-colors"
                 >
-                  <span>Source Code</span>
+                  <span>Project Overview</span>
                   <span className="text-base leading-none">↗</span>
                 </a>
               </div>
@@ -159,7 +170,7 @@ export default function ProjectsSection() {
         >
           <div className="flex items-center justify-between mb-8">
             <h3 className="font-heading text-2xl sm:text-3xl text-[#111111]">
-              Other Repositories &amp; Open Source
+              Other Repositories &amp; Innovation Work
             </h3>
             <a
               href="https://github.com/fatimawada"

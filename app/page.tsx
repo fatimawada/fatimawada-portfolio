@@ -2,44 +2,44 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
-import ExpertiseSection from "./components/ExpertiseSection";
-import StackSection from "./components/StackSection";
+import VenturesSection from "./components/VenturesSection";
 import ProjectsSection from "./components/ProjectsSection";
-import CredentialsSection from "./components/CredentialsSection";
+import ExperienceSection from "./components/ExperienceSection";
+import ResearchSection from "./components/ResearchSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#111111] font-sans selection:bg-[#E10600] selection:text-white">
-      {/* Sticky Clean Navbar with "Fatima ." Wordmark */}
+      {/* Sticky Clean Navbar */}
       <Navbar />
 
       {/* Main Content Flow */}
       <main>
-        {/* Full-Screen Pure Red Hero with Cut-out Photo & Voice-Note Card */}
+        {/* Hero Section */}
         <Hero />
 
-        {/* About "Hello!" Section with Tilted Hanging ID Badge */}
+        {/* About "Hello!" Section */}
         <AboutSection />
 
-        {/* My Expertise with Tilted Red Cards along Dotted Path */}
-        <ExpertiseSection />
+        {/* Featured Ventures */}
+        <VenturesSection />
 
-        {/* Technical Stack Categorized Grid */}
-        <StackSection />
-
-        {/* Featured Work with Project Cards & Other Repositories */}
+        {/* Collaborative & Innovation Projects */}
         <ProjectsSection />
 
-        {/* System Badges with Horizontal Scrolling Credentials Track */}
-        <CredentialsSection />
+        {/* Experience & Leadership Horizontal Scrolling Track */}
+        <ExperienceSection />
+
+        {/* Scientific Foundation & Research */}
+        <ResearchSection />
 
         {/* Contact Section with Gigantic CONTACT & Overlapping Red Form Panel */}
         <ContactSection />
       </main>
 
-      {/* Footer with Giant Screen-Width "fatima." Wordmark */}
+      {/* Footer with Screen-Width "fatima." Wordmark */}
       <Footer />
     </div>
   );
