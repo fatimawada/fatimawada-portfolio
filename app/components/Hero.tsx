@@ -169,7 +169,7 @@ export default function Hero() {
                 y: translateY,
                 transformStyle: "preserve-3d",
               }}
-              className="relative w-full max-w-[280px] sm:max-w-sm lg:max-w-[340px] aspect-[720/1024] flex items-center justify-center will-change-transform"
+              className="relative w-full max-w-[290px] sm:max-w-[330px] lg:max-w-[360px] aspect-[720/1024] flex items-center justify-center will-change-transform"
             >
               {/* Layered gentle floating motion */}
               <motion.div
@@ -186,8 +186,8 @@ export default function Hero() {
                   alt="Fatima Binta Wada - Technology Entrepreneur & Product Builder"
                   fill
                   priority
-                  className="object-contain object-bottom drop-shadow-2xl select-none pointer-events-none"
-                  sizes="(max-width: 768px) 280px, 340px"
+                  className="object-contain object-bottom drop-shadow-2xl select-none pointer-events-none scale-[1.04] origin-bottom"
+                  sizes="(max-width: 768px) 290px, 360px"
                 />
               </motion.div>
             </motion.div>
