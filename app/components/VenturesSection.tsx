@@ -13,7 +13,7 @@ const venturesList = [
     links: [
       { label: "relyvora.com", href: "https://relyvora.com" },
       { label: "ng.relyvora.com", href: "https://ng.relyvora.com" },
-      { label: "relyvora.vercel.app", href: "https://relyvora.vercel.app" },
+      { label: "foundation.relyvora.com", href: "https://foundation.relyvora.com" },
     ],
     rotation: "-rotate-2",
     isHero: true,
@@ -44,7 +44,9 @@ const venturesList = [
     category: "SOCIAL IMPACT · DIGITAL INCLUSION",
     role: "Social Impact Vision",
     desc: "The Relyvora Foundation represents the social-impact dimension of the broader Relyvora vision. Its intended focus is expanding digital inclusion, economic participation and access to opportunities for underserved communities.",
-    links: [],
+    links: [
+      { label: "foundation.relyvora.com", href: "https://foundation.relyvora.com" },
+    ],
     rotation: "rotate-3",
     isHero: false,
   },
