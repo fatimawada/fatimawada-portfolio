@@ -9,7 +9,7 @@ export default function Hero() {
 
   // Play greeting audio automatically on load / first user gesture with zero visual UI
   useEffect(() => {
-    const audio = new Audio("/media/fatima_greeting.mp4");
+    const audio = new Audio("/media/fatima_greeting.mp3");
     audio.preload = "auto";
     audioRef.current = audio;
 
