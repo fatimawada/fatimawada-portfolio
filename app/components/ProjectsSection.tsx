@@ -5,52 +5,58 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    category: "GLOBAL HEALTH INNOVATION",
+    category: "DIGITAL HEALTH · EMERGENCY INNOVATION",
     title: "Bite2Care",
-    role: "Product & Technology Lead (Multidisciplinary Team)",
+    role: "Product & Technology Lead | Multidisciplinary Team",
     description:
-      "A technology-enabled emergency coordination system addressing critical delays in snakebite treatment in rural communities. Features low-bandwidth hospital routing, verified facility anti-venom readiness, and frontline WhatsApp interactions.",
-    badge: "Wellcome Trust SnakeHack Africa",
-    tags: ["Digital Health", "Offline-First", "Geospatial Routing", "WhatsApp API"],
-    link: "https://github.com/fatimawada",
+      "A multidisciplinary health innovation project developing a technology-enabled approach to improving coordination during snakebite emergencies, particularly in underserved and rural communities. The project explores how structured emergency guidance, healthcare facility readiness information, referral coordination and transport logistics can help reduce delays between a snakebite incident and access to appropriate treatment. My role involves product and technical leadership, workflow development and coordination across the multidisciplinary team. The solution is being developed with low-connectivity environments in mind, including potential WhatsApp-based interactions.",
+    badge: "SnakeHack Africa (Nairobi, Kenya)",
+    impactNote: "Presented at SnakeHack Africa in Nairobi, Kenya, as part of the Wellcome snakebite innovation initiative.",
+    tags: ["Digital Health", "Emergency Coordination", "Facility Readiness", "Low-Connectivity Workflows"],
+    link: "https://bite2-care.vercel.app",
+    linkLabel: "View Project Demo",
   },
   {
-    category: "CLIMATE FINANCE INFRASTRUCTURE",
-    title: "PulseClime Telemetry & MRV",
+    category: "FINANCIAL INFRASTRUCTURE · CASE STUDY",
+    title: "Relyvora Trust Architecture",
+    role: "Product & Technology Lead",
+    description:
+      "Technical architecture within the Relyvora product exploring protected transaction workflows, conditional holding states, vendor order fulfillment, and delivery confirmation mechanisms. Focuses on orchestrating release codes with infrastructure partner arrangements to create a safer social commerce checkout experience.",
+    badge: "Core Venture Architecture",
+    impactNote: "Exploring protected payment workflows and dispute mediation for informal digital commerce.",
+    tags: ["Transaction Protection", "Payment Workflows", "Order Verification", "Fintech Architecture"],
+    link: "https://relyvora.com",
+    linkLabel: "relyvora.com",
+  },
+  {
+    category: "CLIMATE FINANCE · INFRASTRUCTURE MVP",
+    title: "PulseClime MVP",
     role: "Founder & Product Architect",
     description:
-      "A decentralized measurement, reporting, and verification (MRV) protocol connecting localized environmental sensor telemetry and clean energy metrics to automated climate-finance disbursement workflows, ensuring capital flows directly to verified ecological milestones.",
-    badge: "Climate Innovation",
-    tags: ["Climate MRV", "Milestone Engine", "Decentralized Telemetry", "CleanTech"],
-    link: "https://github.com/fatimawada",
-  },
-  {
-    category: "FINTECH & TRANSACTIONAL TRUST",
-    title: "Relyvora Trust Protocols",
-    role: "Lead Systems Architect",
-    description:
-      "A multi-party transaction-protection architecture combining conditional escrow state machines, verified delivery milestones, and automated dispute mediation protocols to eliminate counterparty risk in informal social commerce across Africa.",
-    badge: "Trust Infrastructure",
-    tags: ["Escrow Protocols", "State Machines", "Dispute Arbitration", "Fintech APIs"],
-    link: "https://github.com/fatimawada",
+      "An exploratory climate-finance infrastructure MVP evaluating how localized environmental data, project monitoring, milestone verification, and financing workflows can bridge the gap between community-level climate activities and institutional capital assessment.",
+    badge: "Climate-Finance Prototype",
+    impactNote: "Translating local environmental and climate metrics into verifiable activities for capital evaluation.",
+    tags: ["Climate Finance", "Environmental Data", "Project Monitoring", "Milestone Verification"],
+    link: "#contact",
+    linkLabel: "Request Overview",
   },
 ];
 
-const otherRepos = [
+const technicalExplorations = [
   {
-    name: "bite2care-triage-routing",
-    desc: "Low-bandwidth hospital facility readiness and emergency anti-venom dispatch logic.",
-    language: "TypeScript / Node",
+    name: "relyvora-protected-checkout",
+    desc: "Workflow specifications and conditional release-code logic for informal social commerce.",
+    focus: "Transaction Logic",
   },
   {
-    name: "relyvora-escrow-engine",
-    desc: "Dispute resolution state machines and multi-party payment holding contracts.",
-    language: "TypeScript",
+    name: "bite2care-referral-workflow",
+    desc: "Low-connectivity emergency referral pathways and facility readiness guidance prototypes.",
+    focus: "Emergency Triage",
   },
   {
-    name: "climate-mrv-telemetry",
-    desc: "Solar inverter ingestion pipeline parsing field telemetry into verifiable milestone records.",
-    language: "Node.js / Timescale",
+    name: "pulseclime-indicator-framework",
+    desc: "Conceptual indicators and data models for environmental milestone verification.",
+    focus: "Climate Capital",
   },
 ];
 
@@ -69,7 +75,7 @@ export default function ProjectsSection() {
         >
           {/* Small pill-shaped section label */}
           <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white text-[#E10600] text-xs font-bold uppercase tracking-wider border border-gray-200 shadow-2xs">
-            Initiatives &amp; Systems
+            Collaborative &amp; Innovation Initiatives
           </span>
 
           <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl text-[#111111] mt-4 leading-tight">
@@ -94,7 +100,7 @@ export default function ProjectsSection() {
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-gray-600">
-            A curated selection of multidisciplinary systems, clinical emergency routing platforms, and open research prototypes.
+            A selection of collaborative healthcare initiatives, infrastructure case studies, and practical prototypes built to address real-world challenges.
           </p>
         </motion.div>
 
@@ -130,6 +136,11 @@ export default function ProjectsSection() {
                 <p className="mt-4 text-sm text-gray-600 leading-relaxed font-normal">
                   {project.description}
                 </p>
+
+                <div className="mt-4 p-3 rounded-xl bg-gray-50 border border-gray-100 text-xs text-gray-600">
+                  <span className="font-bold text-gray-800">Context: </span>
+                  {project.impactNote}
+                </div>
               </div>
 
               <div className="mt-8 pt-6 border-t border-gray-100">
@@ -145,14 +156,14 @@ export default function ProjectsSection() {
                   ))}
                 </div>
 
-                {/* Source Code link */}
+                {/* Project Link */}
                 <a
                   href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={project.link.startsWith("http") ? "_blank" : undefined}
+                  rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#111111] group-hover:text-[#E10600] transition-colors"
                 >
-                  <span>Project Overview</span>
+                  <span>{project.linkLabel}</span>
                   <span className="text-base leading-none">↗</span>
                 </a>
               </div>
@@ -160,7 +171,7 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        {/* Other Repositories List */}
+        {/* Technical Explorations / Repository Overview */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -170,7 +181,7 @@ export default function ProjectsSection() {
         >
           <div className="flex items-center justify-between mb-8">
             <h3 className="font-heading text-2xl sm:text-3xl text-[#111111]">
-              Other Repositories &amp; Innovation Work
+              Technical Workflows &amp; Prototypes
             </h3>
             <a
               href="https://github.com/fatimawada"
@@ -178,33 +189,30 @@ export default function ProjectsSection() {
               rel="noopener noreferrer"
               className="text-xs font-bold uppercase tracking-wider text-[#E10600] hover:underline"
             >
-              View GitHub Profile ↗
+              GitHub Profile ↗
             </a>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {otherRepos.map((repo) => (
-              <a
-                key={repo.name}
-                href="https://github.com/fatimawada"
-                target="_blank"
-                rel="noopener noreferrer"
+            {technicalExplorations.map((item) => (
+              <div
+                key={item.name}
                 className="p-5 rounded-2xl bg-white border border-gray-200/70 hover:border-[#E10600]/40 hover:shadow-lg transition-all group block"
               >
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-sm font-bold text-gray-900 group-hover:text-[#E10600] transition-colors">
-                    {repo.name}
+                    {item.name}
                   </span>
                   <span className="text-gray-400 group-hover:text-[#E10600]">↗</span>
                 </div>
                 <p className="mt-2 text-xs text-gray-500 leading-relaxed">
-                  {repo.desc}
+                  {item.desc}
                 </p>
                 <div className="mt-3 flex items-center gap-2 text-[11px] font-semibold text-gray-400">
                   <span className="w-2 h-2 rounded-full bg-[#E10600]" />
-                  <span>{repo.language}</span>
+                  <span>{item.focus}</span>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </motion.div>

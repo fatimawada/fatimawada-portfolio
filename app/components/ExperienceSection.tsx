@@ -5,49 +5,58 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    role: "Founder & CEO",
+    role: "Founder & CEO | Product & Technology Lead",
     organization: "Relyvora",
     period: "2024 - Present",
-    category: "EXECUTIVE LEADERSHIP",
+    category: "VENTURE LEADERSHIP",
     description:
-      "Company formation, product architecture, payment workflow design, and market expansion strategy for digital commerce trust infrastructure.",
-    highlight: "Fintech & Escrow Architecture",
+      "Company formation, business strategy, product architecture, technical development, payment workflow design and partnership coordination for social commerce trust infrastructure.",
+    highlight: "Payment & Trust Infrastructure",
   },
   {
-    role: "Product & Technology Lead",
+    role: "Founder & Product Architect",
+    organization: "PulseClime",
+    period: "2024 - Present",
+    category: "CLIMATE FINANCE",
+    description:
+      "Product direction and MVP development, concept development, product architecture, and exploration of monitoring, reporting and verification mechanisms for climate-related projects.",
+    highlight: "Climate-Finance MVP",
+  },
+  {
+    role: "Product & Technology Lead | Multidisciplinary Team",
     organization: "Bite2Care",
     period: "2024 - Present",
     category: "HEALTHCARE INNOVATION",
     description:
-      "Multidisciplinary digital health innovation, coordinating frontline emergency workflows, WhatsApp triage bots, and clinical facility matching.",
-    highlight: "Wellcome Trust Finalist",
+      "Product and technical leadership, emergency referral workflow development, low-connectivity system design, and multidisciplinary team coordination.",
+    highlight: "SnakeHack Africa Presenter",
   },
   {
     role: "AI & Digital Literacy Mentor",
     organization: "UNICCON Group",
-    period: "Apr - Aug 2026",
-    category: "TECHNOLOGY EDUCATION",
+    period: "April – August 2026",
+    category: "MENTORSHIP & EDUCATION",
     description:
-      "Responsible AI education, youth technology mentorship, and curriculum guidance on emerging AI toolchains.",
-    highlight: "Youth Mentorship",
+      "Responsible AI education, youth technology mentorship, and foundational digital literacy training on emerging technological tools.",
+    highlight: "Youth Technology Mentorship",
   },
   {
-    role: "Customer Relations & Operations",
+    role: "Customer Relations Associate / User Operations",
     organization: "MySmartMedic (UNICCON)",
     period: "2025 - 2026",
-    category: "HEALTHCARE OPERATIONS",
+    category: "TELEMEDICINE OPERATIONS",
     description:
-      "Digital health operations, telemedicine support workflows, and patient onboarding coordination across clinical networks.",
-    highlight: "Telehealth Operations",
+      "UNICCON's AI telemedicine platform. Managed user onboarding, subscription support, doctor consultation access, issue documentation and operational escalation.",
+    highlight: "Telehealth User Operations",
   },
   {
     role: "Team Leader",
     organization: "AIM Global",
-    period: "Apr 2023 - Nov 2025",
+    period: "April 2023 – November 2025",
     category: "ORGANIZATIONAL LEADERSHIP",
     description:
-      "Team building, entrepreneurial development, distributor mentorship, and international conference participation.",
-    highlight: "Cross-Border Teams",
+      "Team development, distributor mentorship, entrepreneurial engagement, and participation in the international conference in the Philippines.",
+    highlight: "International Conference Delegate",
   },
 ];
 
@@ -92,7 +101,7 @@ export default function ExperienceSection() {
             </span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600">
-            A track record of building ventures, leading multidisciplinary engineering initiatives, and mentoring the next generation of builders.
+            A track record of venture creation, product architecture, multidisciplinary team coordination, and youth technology mentorship.
           </p>
         </motion.div>
 
@@ -121,7 +130,7 @@ export default function ExperienceSection() {
                   </span>
                 </div>
 
-                <h3 className="font-heading text-2xl font-bold text-[#111111] leading-tight">
+                <h3 className="font-heading text-xl font-bold text-[#111111] leading-tight">
                   {exp.role}
                 </h3>
                 <span className="block text-sm font-bold text-[#E10600] mt-1">
@@ -135,7 +144,7 @@ export default function ExperienceSection() {
 
               <div className="mt-8 pt-4 border-t border-gray-200/60 flex items-center justify-between text-xs">
                 <span className="font-bold text-gray-900">{exp.highlight}</span>
-                <span className="text-gray-400">Verified</span>
+                <span className="text-gray-400">Milestone</span>
               </div>
             </motion.div>
           ))}

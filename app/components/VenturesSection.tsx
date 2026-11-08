@@ -7,11 +7,13 @@ const venturesList = [
   {
     num: "01",
     title: "Relyvora",
-    role: "Founder & CEO / Product & Technology Lead",
-    desc: "Building trust and payment infrastructure for social commerce in Africa. Relyvora addresses the lack of transaction protection in informal digital commerce by providing secure payment holding, verified delivery workflows, and dispute mediation. Supported by payment infrastructure partner Anchor.",
+    category: "FINANCIAL INFRASTRUCTURE · SOCIAL COMMERCE",
+    role: "Founder & CEO | Product & Technology Lead",
+    desc: "Relyvora is a Nigerian technology company building trust and payment infrastructure for social commerce. The company addresses the lack of transaction protection experienced by buyers and independent vendors who conduct business through platforms such as WhatsApp and Instagram. Relyvora is developing a protected transaction experience in which buyers make payments into a secure holding workflow, while vendors fulfil orders and confirm delivery through a unique release code. Verified delivery triggers the payment release process through its payment infrastructure arrangements. Relyvora is working with Anchor Technologies Limited as an infrastructure partner supporting its payment and compliance arrangements. My responsibilities include company formation, business strategy, product architecture, technical development, payment workflow design and partnership coordination. The company's initial market is Nigeria, with expansion plans covering Ghana, Kenya and South Africa before broader African expansion.",
     links: [
       { label: "relyvora.com", href: "https://relyvora.com" },
       { label: "ng.relyvora.com", href: "https://ng.relyvora.com" },
+      { label: "relyvora.vercel.app", href: "https://relyvora.vercel.app" },
     ],
     rotation: "-rotate-2",
     isHero: true,
@@ -19,8 +21,9 @@ const venturesList = [
   {
     num: "02",
     title: "PulseClime",
+    category: "CLIMATE FINANCE · FINANCIAL INFRASTRUCTURE",
     role: "Founder & Product Architect",
-    desc: "A climate-finance infrastructure initiative. PulseClime explores how climate intelligence, localized environmental data, and financial mechanisms can work together to improve resilience and unlock accessible climate finance for vulnerable communities.",
+    desc: "PulseClime is an emerging climate-finance infrastructure initiative exploring how environmental intelligence, measurable climate outcomes and financial mechanisms can be connected to improve access to climate capital. The initiative addresses a structural challenge in climate finance: the difficulty of translating local climate and environmental needs into measurable, verifiable activities that financing institutions can assess and support. I defined the product direction and developed its MVP, exploring how environmental data, project monitoring, milestone verification and climate-finance workflows could work together. My work includes concept development, product architecture, technical implementation and the exploration of monitoring, reporting and verification mechanisms for climate-related projects.",
     links: [],
     rotation: "rotate-2",
     isHero: false,
@@ -28,8 +31,9 @@ const venturesList = [
   {
     num: "03",
     title: "ChaseFree",
-    role: "Founder & Full-Stack Product Builder",
-    desc: "An AI-enabled accounts receivable and payment recovery SaaS platform automating overdue invoice workflows and improving cash-flow visibility for service businesses.",
+    category: "SAAS · BUSINESS AUTOMATION",
+    role: "Founder & Product Builder",
+    desc: "ChaseFree is a founder-led SaaS product designed to help service businesses and agencies reduce the administrative burden of collecting overdue payments. The platform focuses on automating accounts receivable follow-ups, organizing invoice reminders and improving visibility into outstanding payments. My work includes product development, application architecture, database design and the integration of payment and communication workflows.",
     links: [],
     rotation: "-rotate-1",
     isHero: false,
@@ -37,8 +41,9 @@ const venturesList = [
   {
     num: "04",
     title: "Relyvora Foundation",
-    role: "Social Impact Arm",
-    desc: "The social-impact arm of the Relyvora vision, focused on expanding digital inclusion, economic participation, and opportunities for underserved communities.",
+    category: "SOCIAL IMPACT · DIGITAL INCLUSION",
+    role: "Social Impact Vision",
+    desc: "The Relyvora Foundation represents the social-impact dimension of the broader Relyvora vision. Its intended focus is expanding digital inclusion, economic participation and access to opportunities for underserved communities.",
     links: [],
     rotation: "rotate-3",
     isHero: false,
@@ -147,10 +152,14 @@ export default function VenturesSection() {
                       <span className="font-heading text-4xl sm:text-5xl font-black text-white/40">
                         {item.num}
                       </span>
-                      <span className="text-[11px] font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-white/20 text-white">
+                      <span className="text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-white/20 text-white">
                         {item.role}
                       </span>
                     </div>
+
+                    <span className="block text-[10px] font-bold tracking-widest uppercase text-white/75 mb-1">
+                      {item.category}
+                    </span>
 
                     <h3 className="font-heading text-2xl sm:text-3xl text-white tracking-tight mb-3">
                       {item.title}

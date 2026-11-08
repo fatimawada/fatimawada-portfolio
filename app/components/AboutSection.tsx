@@ -21,7 +21,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Tilted Hanging ID Badge Card (Preserved as requested) */}
+          {/* Left Column: Tilted Hanging ID Badge Card (No "VERIFIED" phrase) */}
           <motion.div
             initial={{ opacity: 0, rotate: -10, y: 30 }}
             whileInView={{ opacity: 1, rotate: -4, y: 0 }}
@@ -44,7 +44,7 @@ export default function AboutSection() {
                 {/* Lanyard slot hole at top of badge */}
                 <div className="w-12 h-2 rounded-full bg-gray-800 mx-auto mb-3 border border-gray-700" />
 
-                {/* Photo container */}
+                {/* Photo container with headset portrait */}
                 <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-gray-800 bg-gray-900">
                   <Image
                     src="/images/fatima_headset_portrait.jpg"
@@ -55,14 +55,14 @@ export default function AboutSection() {
                   />
                 </div>
 
-                {/* Badge Bottom Details */}
+                {/* Badge Bottom Details (Clean, without the unconfirmed 'VERIFIED' badge) */}
                 <div className="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-between text-xs">
                   <div>
                     <span className="block font-bold text-white text-sm">Fatima B. Wada</span>
                     <span className="text-gray-400 text-[11px]">Technology Entrepreneur &amp; Founder</span>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-[#E10600] text-white font-mono font-bold text-[10px]">
-                    VERIFIED
+                  <span className="px-2.5 py-1 rounded-full bg-white/10 text-white/90 font-mono text-[10px]">
+                    NIGERIA
                   </span>
                 </div>
               </div>
@@ -70,7 +70,7 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Headline, Body Text, & Floating Tech Accents */}
+          {/* Right Column: Headline, Exact Audited Body Text, & Floating Tech Accents (No location badge above header) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -97,14 +97,14 @@ export default function AboutSection() {
                   <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)" />
                   <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)" />
                 </svg>
-                <span className="text-xs sm:text-sm font-bold tracking-wide">Product Architecture &amp; Code</span>
+                <span className="text-xs sm:text-sm font-bold tracking-wide">Product Architecture &amp; Development</span>
               </div>
 
               <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-md hover:scale-105 transition-transform">
                 <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2L2 7.5v9L12 22l10-5.5v-9L12 2zm-1 16.5l-7-3.85V9.45l7 3.85v5.2zm2 0v-5.2l7-3.85v5.2l-7 3.85zM12 4.15l6.5 3.55-6.5 3.55-6.5-3.55L12 4.15z" />
                 </svg>
-                <span className="text-xs sm:text-sm font-bold tracking-wide">Financial &amp; Trust Infrastructure</span>
+                <span className="text-xs sm:text-sm font-bold tracking-wide">Trust &amp; Financial Infrastructure</span>
               </div>
             </div>
 

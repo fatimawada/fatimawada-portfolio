@@ -24,43 +24,44 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fatimawada.com"),
-  title: "Fatima Binta Wada | Technology Entrepreneur",
+  title: "Fatima Binta Wada | Technology Entrepreneur & Product Builder",
   description:
-    "Fatima Binta Wada is a Technology Entrepreneur building fast, scalable, and secure digital products, focusing on transactional trust and infrastructure.",
+    "Fatima Binta Wada is a Nigerian technology entrepreneur building ventures and technology-driven solutions across financial infrastructure, climate finance and digital health.",
   keywords: [
     "Fatima Binta Wada",
     "Fatima Wada",
     "Technology Entrepreneur",
+    "Product Builder",
     "Founder",
     "Relyvora",
-    "Pulseclime",
+    "PulseClime",
     "Bite2Care",
     "Nigeria",
   ],
   authors: [{ name: "Fatima Binta Wada" }],
   openGraph: {
-    title: "Fatima Binta Wada | Technology Entrepreneur",
+    title: "Fatima Binta Wada | Technology Entrepreneur & Product Builder",
     description:
-      "I build fast, scalable, and secure digital products, focusing on transactional trust and infrastructure.",
+      "I am a Nigerian technology entrepreneur building ventures and technology-driven solutions across financial infrastructure, climate finance and digital health.",
     url: "https://fatimawada.com",
     siteName: "Fatima Binta Wada",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/images/fatima_headset_portrait.jpg",
+        url: "/images/fatima_pink_blazer.jpg",
         width: 1200,
         height: 1500,
-        alt: "Fatima Binta Wada - Technology Entrepreneur",
+        alt: "Fatima Binta Wada - Technology Entrepreneur & Product Builder",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fatima Binta Wada | Technology Entrepreneur",
+    title: "Fatima Binta Wada | Technology Entrepreneur & Product Builder",
     description:
-      "I build fast, scalable, and secure digital products, focusing on transactional trust and infrastructure.",
-    images: ["/images/fatima_headset_portrait.jpg"],
+      "I am a Nigerian technology entrepreneur building ventures and technology-driven solutions across financial infrastructure, climate finance and digital health.",
+    images: ["/images/fatima_pink_blazer.jpg"],
   },
 };
 

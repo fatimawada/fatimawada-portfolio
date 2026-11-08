@@ -55,13 +55,15 @@ export default function ContactSection() {
                 <span className="w-8 h-8 rounded-full bg-white/10 text-[#E10600] flex items-center justify-center font-bold text-xs">
                   ✉
                 </span>
-                <span className="font-semibold text-white">contact@fatimawada.com</span>
+                <a href="mailto:hello@fatimawada.com" className="font-semibold text-white hover:text-[#E10600] transition-colors">
+                  hello@fatimawada.com
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-full bg-white/10 text-[#E10600] flex items-center justify-center font-bold text-xs">
                   📍
                 </span>
-                <span>Abuja, Nigeria · Global Availability</span>
+                <span>Nigeria · Available for international collaboration.</span>
               </div>
             </div>
           </motion.div>

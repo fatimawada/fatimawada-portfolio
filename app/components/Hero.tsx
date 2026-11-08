@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Play greeting audio automatically on load / first user gesture
+  // Play greeting audio automatically on load / first user gesture with zero visual UI
   useEffect(() => {
     const audio = new Audio("/media/fatima_greeting.mp4");
     audio.preload = "auto";
@@ -68,27 +68,37 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Top Badge, Headline, Sub-text, Buttons (NO voice note box) */}
+          {/* Left Column: Eyebrow, Name, Headline, Description, Buttons (NO voice note UI box) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-7 flex flex-col items-start space-y-6"
           >
-            {/* Top Badge */}
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider border border-white/20">
-              TECHNOLOGY LEADER &amp; INNOVATOR
+            {/* Eyebrow */}
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider border border-white/20">
+              TECHNOLOGY ENTREPRENEURSHIP · PRODUCT DEVELOPMENT · INNOVATION
             </span>
 
-            {/* Headline (h1) */}
-            <h1 className="font-heading text-4xl sm:text-6xl lg:text-[4.2rem] text-white leading-[1.08] tracking-tight">
-              Hi, I&apos;m a Technology Entrepreneur &amp; Product Builder.
-            </h1>
+            {/* Name & Headline */}
+            <div>
+              <span className="block text-xl sm:text-2xl font-bold text-white/90 mb-1">
+                Fatima Binta Wada
+              </span>
+              <h1 className="font-heading text-4xl sm:text-6xl lg:text-[4.1rem] text-white leading-[1.08] tracking-tight">
+                Technology Entrepreneur &amp; Product Builder.
+              </h1>
+            </div>
 
-            {/* Sub-text (p) */}
-            <p className="text-base sm:text-lg lg:text-xl text-white/95 max-w-xl leading-relaxed font-normal">
-              I work at the intersection of financial infrastructure, climate innovation, and digital health. I build early-stage ventures and lead multidisciplinary initiatives to solve systemic problems across emerging markets and beyond.
-            </p>
+            {/* Description */}
+            <div className="space-y-4 max-w-xl text-base sm:text-lg text-white/95 leading-relaxed font-normal">
+              <p>
+                I am a Nigerian technology entrepreneur building ventures and technology-driven solutions across financial infrastructure, climate finance and digital health.
+              </p>
+              <p className="text-white/90 text-sm sm:text-base">
+                My work combines product development, technical execution, scientific thinking and entrepreneurial leadership. I am particularly interested in building systems that address structural challenges in emerging markets and creating opportunities for more inclusive and sustainable development.
+              </p>
+            </div>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
