@@ -2,10 +2,50 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function Hero() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Mouse tracking for interactive portrait head & eye gaze direction
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Spring physics for natural, buttery-smooth movement
+  const springConfig = { damping: 22, stiffness: 140, mass: 0.6 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  // 3D rotation tracking cursor position
+  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-14, 14]);
+  const rotateX = useTransform(smoothY, [-0.5, 0.5], [10, -10]);
+
+  // Subtle positional parallax following cursor
+  const translateX = useTransform(smoothX, [-0.5, 0.5], [-16, 16]);
+  const translateY = useTransform(smoothY, [-0.5, 0.5], [-12, 12]);
+
+  // Track cursor movement across the viewport
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX / window.innerWidth - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
+      mouseX.set(x);
+      mouseY.set(y);
+    };
+
+    const handleMouseLeave = () => {
+      mouseX.set(0);
+      mouseY.set(0);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, [mouseX, mouseY]);
 
   // Play greeting audio automatically on load / first user gesture with zero visual UI
   useEffect(() => {
@@ -113,25 +153,34 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column: Shifted upward, clean cutout without grey stain, fully visible above fold */}
+          {/* Right Column: Interactive 3D Cursor-Tracking Portrait */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            className="lg:col-span-5 flex justify-center lg:justify-end relative -mt-4 sm:-mt-8 lg:-mt-12"
+            className="lg:col-span-5 flex justify-center lg:justify-end relative -mt-4 sm:-mt-8 lg:-mt-12 [perspective:1000px]"
           >
-            {/* Gentle Floating Motion Container */}
+            {/* 3D Cursor Tracking Container (Tilts head, eyes, and portrait towards cursor) */}
             <motion.div
-              animate={{ y: [-5, 5, -5] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
+              style={{
+                rotateX,
+                rotateY,
+                x: translateX,
+                y: translateY,
+                transformStyle: "preserve-3d",
               }}
-              className="relative w-full max-w-[280px] sm:max-w-sm lg:max-w-[340px] aspect-[720/1024] flex items-center justify-center"
+              className="relative w-full max-w-[280px] sm:max-w-sm lg:max-w-[340px] aspect-[720/1024] flex items-center justify-center will-change-transform"
             >
-              {/* Unboxed portrait: Clean transparent cutout on pure red canvas */}
-              <div className="relative w-full h-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_88%,transparent_100%)]">
+              {/* Layered gentle floating motion */}
+              <motion.div
+                animate={{ y: [-4, 4, -4] }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative w-full h-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_88%,transparent_100%)]"
+              >
                 <Image
                   src="/images/fatima_pink_blazer_cutout.png"
                   alt="Fatima Binta Wada - Technology Entrepreneur & Product Builder"
@@ -140,7 +189,7 @@ export default function Hero() {
                   className="object-contain object-bottom drop-shadow-2xl select-none pointer-events-none"
                   sizes="(max-width: 768px) 280px, 340px"
                 />
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
 
