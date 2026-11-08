@@ -163,10 +163,10 @@ export default function ResearchSection() {
               Speaking &amp; Recognition
             </span>
             <h3 className="font-heading text-2xl sm:text-4xl text-[#111111] mt-3">
-              Confirmed Engagements &amp; Honors
+              Engagements &amp; Honors
             </h3>
             <p className="mt-2 text-sm sm:text-base text-gray-600">
-              Verified international presentations, academic merit honors, and departmental recognition.
+              International presentations, academic merit honors, and departmental recognition.
             </p>
           </motion.div>
 
