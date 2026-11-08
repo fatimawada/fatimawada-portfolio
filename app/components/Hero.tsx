@@ -68,7 +68,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Eyebrow, Name, Headline, Description, Buttons (NO voice note UI box) */}
+          {/* Left Column: Eyebrow, Headline, Punchy Sub-text, Buttons (NO voice note UI box, NO double about copy) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,28 +77,21 @@ export default function Hero() {
           >
             {/* Eyebrow */}
             <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider border border-white/20">
-              TECHNOLOGY ENTREPRENEURSHIP · PRODUCT DEVELOPMENT · INNOVATION
+              TECHNOLOGY LEADER &amp; INNOVATOR
             </span>
 
-            {/* Name & Headline */}
+            {/* Headline */}
             <div>
-              <span className="block text-xl sm:text-2xl font-bold text-white/90 mb-1">
-                Fatima Binta Wada
-              </span>
-              <h1 className="font-heading text-4xl sm:text-6xl lg:text-[4.1rem] text-white leading-[1.08] tracking-tight">
+              <h1 className="font-heading text-4xl sm:text-6xl lg:text-[4.2rem] font-extrabold text-white leading-[1.08] tracking-tight">
+                Hi, I&apos;m a<br />
                 Technology Entrepreneur &amp; Product Builder.
               </h1>
             </div>
 
-            {/* Description */}
-            <div className="space-y-4 max-w-xl text-base sm:text-lg text-white/95 leading-relaxed font-normal">
-              <p>
-                I am a Nigerian technology entrepreneur building ventures and technology-driven solutions across financial infrastructure, climate finance and digital health.
-              </p>
-              <p className="text-white/90 text-sm sm:text-base">
-                My work combines product development, technical execution, scientific thinking and entrepreneurial leadership. I am particularly interested in building systems that address structural challenges in emerging markets and creating opportunities for more inclusive and sustainable development.
-              </p>
-            </div>
+            {/* Sub-text (Concise, punchy - no repetition with About section) */}
+            <p className="text-base sm:text-lg lg:text-xl text-white/95 max-w-xl leading-relaxed font-normal">
+              I work at the intersection of financial infrastructure, climate innovation, and digital health. I build early-stage ventures and lead multidisciplinary initiatives to solve systemic problems across emerging markets and beyond.
+            </p>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
@@ -118,7 +111,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column: Unboxed, Free-Floating Photo overlapping Red Background */}
+          {/* Right Column: Unboxed, Free-Floating Cutout Photo on Red Background */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -133,19 +126,19 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative w-full max-w-sm sm:max-w-md aspect-[3/4] flex items-center justify-center"
+              className="relative w-full max-w-sm sm:max-w-md aspect-[720/1024] flex items-center justify-center"
             >
-              {/* Back illumination halo */}
-              <div className="absolute inset-4 rounded-full bg-white/20 blur-3xl pointer-events-none" />
+              {/* Subtle back depth illumination */}
+              <div className="absolute inset-8 rounded-full bg-white/10 blur-3xl pointer-events-none" />
 
-              {/* Unboxed portrait: No borders, no card box, feathered seamlessly into the red background */}
-              <div className="relative w-full h-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]">
+              {/* Unboxed portrait: No borders, no card box, transparent cutout feathered into red canvas */}
+              <div className="relative w-full h-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]">
                 <Image
-                  src="/images/fatima_pink_blazer.jpg"
+                  src="/images/fatima_pink_blazer_cutout.png"
                   alt="Fatima Binta Wada - Technology Entrepreneur & Product Builder"
                   fill
                   priority
-                  className="object-cover object-top drop-shadow-2xl select-none pointer-events-none"
+                  className="object-contain object-bottom drop-shadow-2xl select-none pointer-events-none"
                   sizes="(max-width: 768px) 100vw, 480px"
                 />
               </div>
